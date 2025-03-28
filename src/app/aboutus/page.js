@@ -14,8 +14,10 @@ import VideoOne from "../components/modalVideo/videoOne";
 
 
 export default function AboutUs(){
+    //about
     return(
         <>
+        
         <Navbar navClass="defaultscroll sticky" logolight={true} menuClass = "navigation-menu nav-left nav-light"/>
         <section className="bg-half-170 d-table w-100" style={{backgroundImage:"url('/images/bg/03.jpg')"}}>
             <div className="bg-overlay bg-gradient-overlay-2"></div>
