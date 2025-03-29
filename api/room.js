@@ -9,9 +9,9 @@ import rm6 from '/public/images/room/img-11.jpg'
 const Rooms = [
     {
         RoomImg:rm1,
-        RoomHeading:"Lake view Room",
+        RoomHeading:"Three Bedrooms",
         slug:'Lake-view-Room',
-        RoomCount:'Twin Room',
+        RoomCount:'Three Room',
         Des:"If you are going to use a passage Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
         Price:"$142",
     },

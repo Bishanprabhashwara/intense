@@ -18,7 +18,8 @@ const Contactpage = () => {
                                         <span>Hotel Address</span>
                                     </div>
                                 </div>
-                                <h2>25 North Street,Dubai</h2>
+                                <p>9 brighton rise maddingley vic 3340
+                                </p>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 col-12">
@@ -29,9 +30,11 @@ const Contactpage = () => {
                                     </div>
                                     <div className="info-text">
                                         <span>Official Mail</span>
+
                                     </div>
                                 </div>
-                                <h2>info@varaus.com</h2>
+                                <p>Admins@intensehomes.com.au</p>
+
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-12 col-12">
@@ -44,7 +47,7 @@ const Contactpage = () => {
                                         <span>Official Phone</span>
                                     </div>
                                 </div>
-                                <h2>+91 256-987-239</h2>
+                                <p>+04 333-278-71</p>
                             </div>
                         </div>
                     </div>
@@ -57,7 +60,7 @@ const Contactpage = () => {
                     </div>
                 </div>
                 <div className="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976314309273!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1547528325671"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.359003933375!2d144.39913987497872!3d-37.687767026846096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6be44d5de6edf%3A0x1db3126aac915536!2s9%20Brighton%20Rise%2C%20Maddingley%20VIC%203340%2C%20Australia!5e0!3m2!1sen!2slk!4v1743265540211!5m2!1sen!2slk"></iframe>
                 </div>
             </div>
         </div>

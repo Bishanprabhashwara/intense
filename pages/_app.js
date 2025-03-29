@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div>
       <Head>
-        <title>Varaus - Hotel Booking Next Js Template</title>
+        <title>Intense Homes</title>
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>

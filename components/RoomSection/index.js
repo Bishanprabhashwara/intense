@@ -22,8 +22,8 @@ const RoomSection = (props) => {
                 <div className="container">
                     <div className="col-12">
                         <div className="wpo-section-title">
-                            <span>Our Rooms</span>
-                            <h2>Discover Our Rooms</h2>
+                            <span>Our Homes</span>
+                            <h2>Discover Our Homes</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -35,7 +35,7 @@ const RoomSection = (props) => {
                                             className={classnames({ active: activeTab === '1' })}
                                             onClick={() => { toggle('1'); }}
                                         >
-                                            Classic
+                                            Single Storeys
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
@@ -43,10 +43,10 @@ const RoomSection = (props) => {
                                             className={classnames({ active: activeTab === '2' })}
                                             onClick={() => { toggle('2'); }}
                                         >
-                                            Budget
+                                            Double Storeys
                                         </NavLink>
                                     </NavItem>
-                                    <NavItem>
+                                    {/* <NavItem>
                                         <NavLink
                                             className={classnames({ active: activeTab === '3' })}
                                             onClick={() => { toggle('3'); }}
@@ -69,7 +69,7 @@ const RoomSection = (props) => {
                                         >
                                             Single
                                         </NavLink>
-                                    </NavItem>
+                                    </NavItem> */}
 
                                 </Nav>
                             </div>

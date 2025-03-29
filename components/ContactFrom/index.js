@@ -80,7 +80,7 @@ class ContactForm extends Component {
             error } = this.state;
 
         return(
-            <form onSubmit={this.subimtHandler} className="contact-form">
+            <form onSubmit={this.subimtHandler} className="contact-form" action="mailto:Admins@intensehomes.com.au" method="post" enctype="text/plain">
                 <div className="row">
                     <div className="col-lg-6 col-12">
                         <div className="form-field">

@@ -16,8 +16,12 @@ const Features = (props) => {
                     {Services.map((service, sev) => (
                         <div className="col-lg-4 items col-md-6 col-sm-6 col-12" key={sev}>
                             <div className="featured-wrap">
-                                <div className="featured-img">
-                                    <Image src={service.simg1} alt=""/>
+                                <div className="featured-img w-[850px] h-[648px]">
+                                    <Image src={service.simg1} 
+                                    width={850} 
+                                    height={648} 
+                                    alt=""
+                                    className="object-cover w-full h-full"/>
                                     <div className="featured-content">
                                       <Link onClick={ClickHandler} href="/service-single/[slug]" as={`/service-single/${service.slug}`}>{service.title}</Link>
                                     </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Logo from '/public/images/logo-2.png'
+import Logo from '/public/images/Finallogowhite.png'
 import Link from 'next/link'
 import { connect } from "react-redux";
 import { removeFromCart } from "../../store/actions/action";
@@ -32,27 +32,27 @@ const Header = (props) => {
                             <div className="col-xl-6 col-lg-8 d-lg-block d-none">
                                 <nav>
                                     <ul>
-                                        <li><Link onClick={ClickHandler}  href="/home" title="">Home +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler}  href="/home2" title="">Home</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/home">Home style 1</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home2">Home style 2</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home3">Home style 3</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/room" title="">Room +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/room" title="">Houses</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/room" title="">Room</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/room-single/Apartment" title="">Room Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/destination" title="">Destination +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/destination" title="">Destination</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/destination" title="">Destination</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/destination-single/Paris,France" title="">Destination Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/home" title="">Pages +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/about" title="">About</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/about" title="">About</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/404" title="">Error 404</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/search-result" title="">Search Result</Link></li>
@@ -63,15 +63,15 @@ const Header = (props) => {
                                                         <li><Link onClick={ClickHandler} href="/forgot-password" title="">Forgot Password</Link></li>
                                                     </ul>
                                                 </li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/service" title="">Service +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/service" title="">Service</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/service" title="">Service</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/service-single/Delicious-Food" title="">Service Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/blog">Blog +</Link>
+                                        {/* <li><Link onClick={ClickHandler} href="/blog">Blog +</Link>
                                             <ul>
                                                 <li><Link onClick={ClickHandler} href="/blog">Blog</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog Left sidebar</Link></li>
@@ -84,14 +84,14 @@ const Header = (props) => {
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li> */}
                                         <li><Link onClick={ClickHandler} href="/contact" title="">Contact</Link></li>
                                     </ul>
                                 </nav>
                             </div>
                             <div className="col-xl-3 get-q">
                                 <div className="get-quote">
-                                    <Link href="/contact"><i className="fi flaticon-support-1"></i>Call : +0123-456-789</Link>
+                                    <Link href="/contact"><i className="fi flaticon-support-1"></i>Call : +04 333-278-71</Link>
                                 </div>
                             </div>
                             <div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6">
@@ -108,7 +108,7 @@ const Header = (props) => {
                                                 </form>
                                             </div>
                                         </div>
-                                        <div className="mini-cart">
+                                        {/* <div className="mini-cart">
                                             <button className="cart-toggle-btn">
                                                 {" "}
                                                 <i className="fi flaticon-shopping-cart"></i>{" "}
@@ -149,7 +149,7 @@ const Header = (props) => {
                                                     <Link onClick={ClickHandler} href="/cart" className="view-cart-btn theme-btn">View Cart</Link>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

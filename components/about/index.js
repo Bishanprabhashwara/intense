@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import ab1 from '/public/images/about/about.png'
+import ab1 from '/public/images/about/__next_static_media_2.c6ab6f47.jpg'
 import Image from 'next/image'
 
 const About = (props) => {
@@ -20,9 +20,9 @@ const About = (props) => {
                         <div className="wpo-about-text">
                             <div className="wpo-section-title">
                                 <span>About Us</span>
-                                <h2>A Best Place <br/> to Enjoy </h2>
+                                <h2>Your Trusted  <br/> Real Estate Partner</h2>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                            <p>At Intense Home, we specialize in helping individuals and families find their dream homes. Based in Australia, we offer expert real estate services across Australia. Whether you’re buying, selling, or investing, our team is here to guide you every step of the way. </p>
                             <div className="btns">
                                 <Link onClick={ClickHandler} href="/about" className="theme-btn-s2">More About Us</Link>
                             </div>

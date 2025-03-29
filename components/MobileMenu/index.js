@@ -6,155 +6,155 @@ const menus = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
-        submenu: [
-            {
-                id: 11,
-                title: 'Home style 1',
-                link: '/home'
-            },
-            {
-                id: 12,
-                title: 'Home style 2',
-                link: '/home2'
-            },
-            {
-                id: 13,
-                title: 'Home style 3',
-                link: '/home3'
-            },
-        ]
+        link: '/home2',
+        // submenu: [
+        //     {
+        //         id: 11,
+        //         title: 'Home style 1',
+        //         link: '/home'
+        //     },
+        //     {
+        //         id: 12,
+        //         title: 'Home style 2',
+        //         link: '/home2'
+        //     },
+        //     {
+        //         id: 13,
+        //         title: 'Home style 3',
+        //         link: '/home3'
+        //     },
+        // ]
     },
 
-    {
-        id: 2,
-        title: 'Room',
-        link: '/room',
-        submenu: [
-            {
-                id: 21,
-                title: 'Room',
-                link: '/room'
-            },
-            {
-                id: 22,
-                title: 'Room Single',
-                link: '/room-single/Apartment'
-            }
-        ]
-    },
+    // {
+    //     id: 2,
+    //     title: 'Room',
+    //     link: '/room',
+    //     submenu: [
+    //         {
+    //             id: 21,
+    //             title: 'Room',
+    //             link: '/room'
+    //         },
+    //         {
+    //             id: 22,
+    //             title: 'Room Single',
+    //             link: '/room-single/Apartment'
+    //         }
+    //     ]
+    // },
     {
         id: 3,
         title: 'Destination',
         link: '/destination',
-        submenu: [
-            {
-                id: 21,
-                title: 'Destination',
-                link: '/destination'
-            },
-            {
-                id: 22,
-                title: 'Destination Single',
-                link: '/destination-single/Paris,France'
-            }
-        ]
+        // submenu: [
+        //     {
+        //         id: 21,
+        //         title: 'Destination',
+        //         link: '/destination'
+        //     },
+        //     {
+        //         id: 22,
+        //         title: 'Destination Single',
+        //         link: '/destination-single/Paris,France'
+        //     }
+        // ]
     },
     
     {
         id: 7,
-        title: 'Pages',
-        link: '/',
-        submenu: [
-            {
-                id: 71,
-                title: 'About',
-                link: '/about'
-            },
-            {
-                id: 79,
-                title: 'Error 404',
-                link: '/404'
-            },
-            {
-                id: 87,
-                title: 'Search Result',
-                link: '/search-result'
-            },
-            {
-                id: 80,
-                title: 'Login Page',
-                link: '/404'
-            },
-            {
-                id: 81,
-                title: 'Signup Page',
-                link: '/register'
-            },
-            {
-                id: 82,
-                title: 'Forgot Password',
-                link: '/forgot-password'
-            },
+        title: 'About',
+        link: '/about',
+        // submenu: [
+        //     {
+        //         id: 71,
+        //         title: 'About',
+        //         link: '/about'
+        //     },
+        //     {
+        //         id: 79,
+        //         title: 'Error 404',
+        //         link: '/404'
+        //     },
+        //     {
+        //         id: 87,
+        //         title: 'Search Result',
+        //         link: '/search-result'
+        //     },
+        //     {
+        //         id: 80,
+        //         title: 'Login Page',
+        //         link: '/404'
+        //     },
+        //     {
+        //         id: 81,
+        //         title: 'Signup Page',
+        //         link: '/register'
+        //     },
+        //     {
+        //         id: 82,
+        //         title: 'Forgot Password',
+        //         link: '/forgot-password'
+        //     },
 
-        ]
+        // ]
     },
 
     {
         id: 4,
         title: 'Service',
         link: '/service',
-        submenu: [
-            {
-                id: 41,
-                title: 'Service',
-                link: '/service'
-            },
-            {
-                id: 42,
-                title: 'Service Single',
-                link: '/service-single/Delicious-Food'
-            }
-        ]
+        // submenu: [
+        //     {
+        //         id: 41,
+        //         title: 'Service',
+        //         link: '/service'
+        //     },
+        //     {
+        //         id: 42,
+        //         title: 'Service Single',
+        //         link: '/service-single/Delicious-Food'
+        //     }
+        // ]
     },
 
-    {
-        id: 5,
-        title: 'Blog',
-        link: '/blog',
-        submenu: [
-            {
-                id: 51,
-                title: 'Blog',
-                link: '/blog'
-            },
-            {
-                id: 52,
-                title: 'Blog Left sidebar',
-                link: '/blog-left-sidebar'
-            },
-            {
-                id: 53,
-                title: 'Blog full width',
-                link: '/blog-fullwidth'
-            },
-            {
-                id: 54,
-                title: 'Blog single',
-                link: '/blog-single/You’re-In-Dubai'
-            },
-            {
-                id: 55,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-left-sidebar/You’re-In-Dubai'
-            },
-            {
-                id: 56,
-                title: 'Blog single Left sidebar',
-                link: '/blog-single-fullwidth/You’re-In-Dubai'
-            },
-        ]
-    },
+    // {
+    //     id: 5,
+    //     title: 'Blog',
+    //     link: '/blog',
+    //     submenu: [
+    //         {
+    //             id: 51,
+    //             title: 'Blog',
+    //             link: '/blog'
+    //         },
+    //         {
+    //             id: 52,
+    //             title: 'Blog Left sidebar',
+    //             link: '/blog-left-sidebar'
+    //         },
+    //         {
+    //             id: 53,
+    //             title: 'Blog full width',
+    //             link: '/blog-fullwidth'
+    //         },
+    //         {
+    //             id: 54,
+    //             title: 'Blog single',
+    //             link: '/blog-single/You’re-In-Dubai'
+    //         },
+    //         {
+    //             id: 55,
+    //             title: 'Blog single Left sidebar',
+    //             link: '/blog-single-left-sidebar/You’re-In-Dubai'
+    //         },
+    //         {
+    //             id: 56,
+    //             title: 'Blog single Left sidebar',
+    //             link: '/blog-single-fullwidth/You’re-In-Dubai'
+    //         },
+    //     ]
+    // },
     {
         id: 88,
         title: 'Contact',

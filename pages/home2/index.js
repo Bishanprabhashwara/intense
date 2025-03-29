@@ -16,10 +16,10 @@ const HomePage2 =() => {
         <Fragment>
             <Navbar2/>
             <Hero2 heroClass={'hero-style-2'}/>
-            <SearchSection/>
+            {/* <SearchSection/> */}
             <About2/>
             <Destination2/>
-            <RoomSection/>
+            {/* <RoomSection/> */}
             <Features/>
             <Testimonial/>
             <BlogSection/> 
