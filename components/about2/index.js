@@ -20,9 +20,11 @@ const About2 = (props) => {
                         <div className="wpo-about-text">
                             <div className="wpo-section-title">
                                 <span>About Us</span>
-                                <h2>A Best Place to Enjoy <br/> Your Holidays </h2>
+                                <h2>The Best To Buy <br/> Your Future Home </h2>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                            <p>Intense Homes is committed to crafting high-quality, architecturally designed homes across Melbourne’s West, North, South East, and Geelong regions. Our modern floorplans offer the perfect blend of style and flexibility, catering to every lifestyle. With stunning facades that exude luxury at an affordable price, we make dream homes a reality.
+
+Whether you're a first-time homebuyer, an investor, or a growing family, our thoughtfully designed house and land packages provide the perfect foundation for your future. Experience exceptional craftsmanship, contemporary design, and unmatched value with Intense Homes. </p>
                             <div className="btns">
                                 <Link onClick={ClickHandler} href="/about" className="theme-btn-s2">More About Us</Link>
                             </div>

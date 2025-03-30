@@ -9,8 +9,8 @@ const HeaderTopbar = () => {
                     <div className="col col-md-6 col-sm-7 col-12">
                         <div className="contact-intro">
                             <ul>
-                                <li><i className="fi ti-location-pin"></i>28 Street, New York City, USA</li>
-                                <li><i className="fi flaticon-email"></i> varaus@gmail.com</li>
+                                <li><i className="fi ti-location-pin"></i>9 brighton rise maddingley vic 3340</li>
+                                <li><i className="fi flaticon-email"></i> Admins@intensehomes.com.au</li>
                             </ul>
                         </div>
                     </div>
@@ -21,7 +21,7 @@ const HeaderTopbar = () => {
                                 <li><Link href="/"><i className="ti-twitter-alt"></i></Link></li>
                                 <li><Link href="/"><i className="ti-instagram"></i></Link></li>
                                 <li><Link href="/"><i className="ti-google"></i></Link></li>
-                                <li><Link className="theme-btn-s2" href="/room">Book A Room </Link></li>
+                                <li><Link className="theme-btn-s2" href="/room">Book A Home </Link></li>
                             </ul>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Logo from '/public/images/logo.png'
+import Logo from '/public/images/Finallogowhite.png'
 import ft1 from '/public/images/footer/img-1.jpg'
 import ft2 from '/public/images/footer/img-2.jpg'
 import Image from 'next/image'
@@ -47,12 +47,12 @@ const Footer = (props) => {
                                     <div className="widget-title">
                                         <h3>Contact </h3>
                                     </div>
-                                    <p>online store with lots of cool and exclusive features</p>
+                                    {/* <p>online store with lots of cool and exclusive features</p> */}
                                     <div className="contact-ft">
                                         <ul>
-                                            <li><i className="fi ti-location-pin"></i>28 Street, New York City, USA</li>
-                                            <li><i className="fi ti-mobile"></i>+000123456789</li>
-                                            <li><i className="fi flaticon-email"></i>varaus@gmail.com</li>
+                                            <li><i className="fi ti-location-pin"></i>9 brighton rise maddingley vic 3340</li>
+                                            <li><i className="fi ti-mobile"></i>+04 333-278-71</li>
+                                            <li><i className="fi flaticon-email"></i>Admins@intensehomes.com.au</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -69,8 +69,8 @@ const Footer = (props) => {
                                             </div>
                                             <div className="news-text">
                                                 <h3><Link onClick={ClickHandler} href="/destination-single/[slug]" as={`/destination-single/${destination.slug}`}>{destination.title}</Link></h3>
-                                                <span>{destination.date}</span>
-                                                <h2>${destination.price}</h2>
+                                                {/* <span>{destination.date}</span>
+                                                <h2>${destination.price}</h2> */}
                                             </div>
                                         </div>
                                     ))}
@@ -86,7 +86,7 @@ const Footer = (props) => {
                                         <li><Link onClick={ClickHandler} href="/room">Our Offers</Link></li>
                                         <li><Link onClick={ClickHandler} href="/service">How Spread</Link></li>
                                         <li><Link onClick={ClickHandler} href="/contact">Contact Us</Link></li>
-                                        <li><Link onClick={ClickHandler} href="/service-single">Our Event</Link></li>
+                                        {/* <li><Link onClick={ClickHandler} href="/service-single">Our Event</Link></li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ const Footer = (props) => {
                             </div>
                         </div>
                         <div className="col col-lg-6 col-md-6 col-12">
-                            <p className="copyright">&copy; 2023 Varaus. All rights reserved</p>
+                            <p className="copyright">&copy; Powerd by Synapze. All rights reserved</p>
                         </div>
                     </div>
                 </div>

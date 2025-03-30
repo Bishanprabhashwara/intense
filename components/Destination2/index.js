@@ -62,7 +62,7 @@ const Destination2 = () => {
                 <div className="col-12">
                     <div className="wpo-section-title text-center">
                         <span>Populer Destination</span>
-                        <h2>Choose Your Country</h2>
+                        <h2>Choose Your City</h2>
                     </div>
                 </div>
                 <div className="destination-carousel">
@@ -71,17 +71,27 @@ const Destination2 = () => {
                             <div className="item" key={ditem}>
                                 <div className="destination-item">
                                     <div className="destination-img">
-                                        <Image src={destination.dimg1} alt="" />
+                                        <Image 
+                                            src={destination.dimg1} 
+                                            alt={destination.title || "Destination image"}
+                                            width={400}
+                                            height={300}
+                                            style={{
+                                                width: '100%',
+                                                height: '250px',
+                                                objectFit: 'cover'
+                                            }}
+                                        />
                                     </div>
                                     <div className="destination-content">
                                         <div className="content-left">
                                             <h5><Link onClick={ClickHandler} href="/destination-single/[slug]" as={`/destination-single/${destination.slug}`}>{destination.title}</Link></h5>
-                                            <small>{destination.date}</small>
+                                            {/* <small>{destination.date}</small> */}
                                         </div>
-                                        <div className="content-right">
+                                        {/* <div className="content-right">
                                             <h5>${destination.price}</h5>
                                             <span>Per Day</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

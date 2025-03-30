@@ -26,11 +26,11 @@ const Benefits = (props) => {
                                 aria-controls="panel1bh-content"
                                 id="panel1bh-header"
                             >
-                                <Typography>Luxery Hotel and Resort</Typography>
+                                <Typography>What are the main attractions in Melbourne's West?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
+                                    Melbourne's West offers diverse attractions including Scienceworks Museum, Werribee Open Range Zoo, Altona Beach, and the historic Williamstown waterfront. The region is famous for its multicultural food scene, particularly in Footscray, and features beautiful parks like Brimbank Park and Werribee Park Mansion.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -40,11 +40,11 @@ const Benefits = (props) => {
                                 aria-controls="panel2bh-content"
                                 id="panel2bh-header"
                             >
-                                <Typography>Planning can help alleviate workplace stress and increase productivity.</Typography>
+                                <Typography>What makes Melbourne's North unique?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
+                                    Melbourne's North is known for its vibrant arts scene, cafe culture, and historic neighborhoods. Key features include the Queen Victoria Market, Brunswick's street art, Lygon Street's Italian precinct, and extensive bike trails along Merri Creek. The area offers a perfect blend of cultural diversity, entertainment, and outdoor activities.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -54,12 +54,11 @@ const Benefits = (props) => {
                                 aria-controls="panel3bh-content"
                                 id="panel3bh-header"
                             >
-                                <Typography>Those who experiment the most, are able to innovate the best.</Typography>
-                
+                                <Typography>What can visitors explore in Melbourne's South East?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
+                                    The South East region features the iconic Brighton Beach Bathing Boxes, Chadstone Shopping Centre, and the scenic Dandenong Ranges. Visitors can enjoy the historic Puffing Billy Railway, explore diverse dining options in Glen Waverley, and experience the vibrant Chapel Street precinct with its boutiques and nightlife.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -69,11 +68,11 @@ const Benefits = (props) => {
                                 aria-controls="panel4bh-content"
                                 id="panel4bh-header"
                             >
-                                <Typography>Understand Your Problem, You must understand the issue.</Typography>
+                                <Typography>What makes Geelong a must-visit destination?</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum exercitationem pariatur iure nemo esse repellendus est quo recusandae. Delectus, maxime.
+                                    Geelong, as Victoria's second-largest city, offers the stunning Waterfront precinct, National Wool Museum, and easy access to the Great Ocean Road. Visitors can enjoy the Eastern Beach Swimming Enclosure, explore the You Yangs Regional Park, and experience the city's growing food and wine scene along with numerous cultural festivals throughout the year.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>

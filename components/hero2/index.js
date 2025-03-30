@@ -33,7 +33,7 @@ const Hero2 = (props) => {
                                             <p>Make Your Life Better and Bright! You must trip with Us!</p>
                                         </div>
                                         <div className="btns">
-                                            <Link href="/room" className="theme-btn">Book A Room</Link>
+                                            <Link href="/room" className="theme-btn">Buy A Home</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@ const Hero2 = (props) => {
                                             <p>Make Your Life Better and Bright! You must trip with Us!</p>
                                         </div>
                                         <div className="btns">
-                                            <Link href="/room" className="theme-btn">Book A Room</Link>
+                                            <Link href="/room" className="theme-btn">Buy A Home</Link>
                                         </div>
                                     </div>
                                 </div>

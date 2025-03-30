@@ -1,12 +1,12 @@
 import React from 'react'
 import Destinations from '../../api/destination'
 import Link from 'next/link'
-import ins1 from '/public/images/instragram/1.jpg'
-import ins2 from '/public/images/instragram/2.jpg'
-import ins3 from '/public/images/instragram/3.jpg'
-import ins4 from '/public/images/instragram/4.jpg'
-import ins5 from '/public/images/instragram/5.jpg'
-import ins6 from '/public/images/instragram/6.jpg'
+import ins1 from '/public/images/instragram/1a.jpg'
+import ins2 from '/public/images/instragram/2a.jpg'
+import ins3 from '/public/images/instragram/3a.jpg'
+import ins4 from '/public/images/instragram/4a.jpg'
+import ins5 from '/public/images/instragram/5a.jpg'
+import ins6 from '/public/images/instragram/6a.jpg'
 import Image from 'next/image'
 
 const DestinationSidebar = (props) => {
@@ -54,8 +54,7 @@ const DestinationSidebar = (props) => {
 
                 <div className="wpo-contact-widget widget">
                     <h2>How We Can <br /> Help You!</h2>
-                    <p>labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                        viverra maecenas accumsan lacus vel facilisis. </p>
+                    <p>From the multicultural markets of Melbourne's West to the artistic laneways of the North, the beautiful beaches and shopping of the South East, and the historic waterfront of Geelong, let us help you explore these vibrant regions filled with unique attractions, diverse dining experiences, and rich cultural heritage. </p>
                     <Link onClick={ClickHandler} href="/contact">Contact Us</Link>
                 </div>
             </div>

@@ -34,7 +34,7 @@ const Header = (props) => {
                             <div className="col-xl-6 col-lg-8 d-lg-block d-none">
                                 <nav>
                                     <ul>
-                                        <li><Link onClick={ClickHandler} href="/home2" title="">Home +</Link>
+                                        <li><Link onClick={ClickHandler} href="/home2" title="">Home</Link>
                                             {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/home">Home style 1</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home2">Home style 2</Link></li>
@@ -47,11 +47,11 @@ const Header = (props) => {
                                                 <li><Link onClick={ClickHandler} href="/room-single/Apartment" title="">Room Single</Link></li>
                                             </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/destination" title="">Destination +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/destination" title="">Destination</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/destination" title="">Destination</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/destination-single/Paris,France" title="">Destination Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
                                         <li><Link onClick={ClickHandler} href="/about" title="">About</Link>
                                             {/* <ul>
@@ -67,11 +67,11 @@ const Header = (props) => {
                                                 </li>
                                             </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/service" title="">Service +</Link>
-                                            <ul>
+                                        <li><Link onClick={ClickHandler} href="/service" title="">Service</Link>
+                                            {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/service" title="">Service</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/service-single/Delicious-Food" title="">Service Single</Link></li>
-                                            </ul>
+                                            </ul> */}
                                         </li>
                                         <li><Link onClick={ClickHandler} href="/blog">Blog +</Link>
                                             <ul>
@@ -99,7 +99,7 @@ const Header = (props) => {
                             <div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6">
                                 <div className="contact">
                                     <div className="cart-search-contact">
-                                        <div className="header-search-form-wrapper">
+                                        {/* <div className="header-search-form-wrapper">
                                             <button className="search-toggle-btn"><i className="fi flaticon-search"></i></button>
                                             <div className="header-search-form">
                                                 <form onSubmit={SubmitHandler}>
@@ -109,7 +109,7 @@ const Header = (props) => {
                                                     </div>
                                                 </form>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <div className="mini-cart">
                                             <button className="cart-toggle-btn">
                                                 {" "}

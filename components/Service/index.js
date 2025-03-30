@@ -17,9 +17,13 @@ const Service = (props) => {
                         <h2>What We Offer For You</h2>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row" >
                     {Services.map((service, sev) => (
-                        <div className="col col-lg-4 col-md-6 custom-grid col-12" key={sev}>
+                        <div className="col col-lg-4 col-md-6 custom-grid col-12" key={sev} style={{
+                            width: '100%',
+                            height: '250px',
+                            objectFit: 'cover'
+                        }}>
                             <div className="service-item">
                                 <div className="service-icon">
                                     <i className={`fi ${service.fIcon}`}></i>

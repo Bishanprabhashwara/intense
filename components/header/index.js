@@ -97,7 +97,7 @@ const Header = (props) => {
                             <div className="col-xl-1 col-lg-1 col-md-6 col-sm-6 col-6">
                                 <div className="contact">
                                     <div className="cart-search-contact">
-                                        <div className="header-search-form-wrapper">
+                                        {/* <div className="header-search-form-wrapper">
                                             <button className="search-toggle-btn"><i className="fi flaticon-search"></i></button>
                                             <div className="header-search-form">
                                                 <form onSubmit={SubmitHandler}>
@@ -107,7 +107,7 @@ const Header = (props) => {
                                                     </div>
                                                 </form>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* <div className="mini-cart">
                                             <button className="cart-toggle-btn">
                                                 {" "}
