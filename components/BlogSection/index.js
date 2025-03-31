@@ -3,6 +3,7 @@ import Link from 'next/link'
 import blogs from '../../api/blogs'
 import Image from 'next/image'
 
+
 const BlogSection = (props) => {
 
     const ClickHandler = () => {

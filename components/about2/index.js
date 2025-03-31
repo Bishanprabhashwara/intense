@@ -1,6 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
-import ab1 from '/public/images/about/__next_static_media_2.c6ab6f47.jpg'
+import ab1 from '/public/images/about/aboutimg.jpeg'
+import ab2 from '/public/images/about/about1.jpg'
+import ab3 from '/public/images/about/about2.png'
+import ab4 from '/public/images/about/about3.jpg'
+import ab5 from '/public/images/about/about4.jpg'
+import ab6 from '/public/images/about/about5.jpg'
+import ab7 from '/public/images/about/about6.png'
+import ab8 from '/public/images/about/about7.png'
 import Image from 'next/image'
 
 const About2 = (props) => {
@@ -13,7 +20,7 @@ const About2 = (props) => {
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                         <div className="wpo-about-img">
-                            <Image src={ab1} alt=""/>
+                            <Image src={ab7} alt=""/>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-12 colsm-12">
