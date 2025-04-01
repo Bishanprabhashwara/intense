@@ -18,7 +18,7 @@ const AboutPage =() => {
             <About/>
             {/* <Features/> */}
             <RoomSection/>
-            <Counter/>
+            {/* <Counter/> */}
             <Testimonial/>
             <Footer/>
             <Scrollbar/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import ab1 from '/public/images/about/__next_static_media_2.c6ab6f47.jpg'
+import ab1 from '/public/images/about/wp7352290.png'
 import Image from 'next/image'
 
 const About = (props) => {
