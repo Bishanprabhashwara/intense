@@ -8,13 +8,14 @@ import Testimonial from '../components/Testimonial'
 import BlogSection from '../components/BlogSection'
 import Footer from '../components/footer'
 import Scrollbar from '../components/scrollbar'
+import SearchSection from '../components/SearchSection';
 
 const HomePage2 =() => {
     return(
         <Fragment>
             <Navbar2/>
             <Hero2 heroClass={'hero-style-2'}/>
-            {/* <SearchSection/> */}
+            <SearchSection/>
             <About2/>
             <Destination2/>
             {/* <RoomSection/> */}

@@ -1,0 +1,83 @@
+.mapPopupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.mapPopupContent {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    max-width: 90%;
+    width: 800px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.closeButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.closeButton:hover {
+    color: #ff6b35;
+}
+
+.regionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.regionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background: white;
+    border: 2px solid #ff6b35;
+    border-radius: 8px;
+    color: #ff6b35;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.regionButton:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+.regionIcon {
+    font-size: 20px;
+}
+
+.welcomeText {
+    color: #666;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.regionText {
+    color: #ff6b35;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 20px 0;
+}

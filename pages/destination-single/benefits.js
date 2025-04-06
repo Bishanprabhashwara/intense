@@ -1,10 +1,13 @@
-import React from 'react'
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+// import dynamic from 'next/dynamic';
 
-
+// const Typography = dynamic(() => import('@mui/material/Typography'), { ssr: true });
+// const Accordion = dynamic(() => import('@mui/material/Accordion'), { ssr: true });
+// const AccordionSummary = dynamic(() => import('@mui/material/AccordionSummary'), { ssr: true });
+// const AccordionDetails = dynamic(() => import('@mui/material/AccordionDetails'), { ssr: true });
+// const ExpandMoreIcon = dynamic(() => import('@mui/icons-material/ExpandMore'), { ssr: true });
+import { Typography,Accordion,AccordionSummary,AccordionDetails } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Benefits = (props) => {
     const [expanded, setExpanded] = React.useState(false);
@@ -12,7 +15,6 @@ const Benefits = (props) => {
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
-
 
     return (
         <div className="wpo-benefits-section">
@@ -22,7 +24,7 @@ const Benefits = (props) => {
                     <div className="wpo-benefits-item">
                         <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                             <AccordionSummary
-                                expandIcon={""}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel1bh-content"
                                 id="panel1bh-header"
                             >
@@ -36,7 +38,7 @@ const Benefits = (props) => {
                         </Accordion>
                         <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
                             <AccordionSummary
-                                expandIcon={""}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2bh-content"
                                 id="panel2bh-header"
                             >
@@ -50,7 +52,7 @@ const Benefits = (props) => {
                         </Accordion>
                         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
                             <AccordionSummary
-                                expandIcon={""}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel3bh-content"
                                 id="panel3bh-header"
                             >
@@ -64,7 +66,7 @@ const Benefits = (props) => {
                         </Accordion>
                         <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
                             <AccordionSummary
-                                expandIcon={""}
+                                expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel4bh-content"
                                 id="panel4bh-header"
                             >
@@ -80,7 +82,6 @@ const Benefits = (props) => {
                 </div>
             </div>
         </div>
-
     )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link'
-import Grid from "@mui/material/Grid";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableRow from "@mui/material/TableRow";
-import TableCell from "@mui/material/TableCell";
+import { Grid,Table,TableBody,TableRow,TableCell } from "@mui/material";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableRow from "@mui/material/TableRow";
+// import TableCell from "@mui/material/TableCell";
 import {totalPrice} from "../../utils";
 
 const OrderRecivedSec = ({cartList}) => {

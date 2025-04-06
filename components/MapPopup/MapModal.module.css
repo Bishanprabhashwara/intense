@@ -1,0 +1,134 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popupBox {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    animation: popupFade 0.3s ease-in-out;
+    padding: 40px;
+}
+
+.closeButton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+    color: #ff6b35;
+}
+
+.popupContent {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.welcomeSection {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.popupTitle {
+    color: #ff6b35;
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.popupText {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.selectRegion {
+    color: #ff6b35;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.regionsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.regionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: white;
+    border: 2px solid #ff6b35;
+    border-radius: 12px;
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #ff6b35;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.regionIcon {
+    font-size: 20px;
+}
+
+.regionButton:hover {
+    background: #ff6b35;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+}
+
+@keyframes popupFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .popupBox {
+        padding: 30px 20px;
+    }
+
+    .popupTitle {
+        font-size: 36px;
+    }
+
+    .popupText {
+        font-size: 16px;
+    }
+
+    .regionsGrid {
+        grid-template-columns: 1fr;
+    }
+}
