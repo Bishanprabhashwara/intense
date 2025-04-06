@@ -9,6 +9,8 @@ import Scrollbar from '../../components/scrollbar';
 import Footer from '../../components/footer';
 
 const SearchResults =({ addToCart }) => {
+    const router = useRouter();
+    const { storeys, bedrooms, lotWidth } = router.query;
 
     const productsArray = api();
     
@@ -26,10 +28,16 @@ const SearchResults =({ addToCart }) => {
                   <div className="container">
                       <div className="row">
                           <div className="col-lg-12">
-                              <SearchRooms
+                              {/* <SearchRooms
                                       addToCartProduct={addToCartProduct}
                                       products={products}
-                                  />
+                                  /> */}
+                                  <h2>Search Results</h2>
+                                    <div>
+                                        <p>Selected Storeys: {storeys}</p>
+                                        <p>Selected Bedrooms: {bedrooms}</p>
+                                        <p>Selected Lot Width: {lotWidth}</p>
+                                    </div>
                           </div>
                       </div>
                   </div>

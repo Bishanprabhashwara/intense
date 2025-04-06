@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import Grid from "@mui/material/Grid";
+import { Grid,TextField,Button,FormControlLabel,Checkbox } from "@mui/material";
 import SimpleReactValidator from "simple-react-validator";
 import {toast} from "react-toastify";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+// import TextField from "@mui/material/TextField";
+// import Button from "@mui/material/Button";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
 import { useRouter } from 'next/router'
 import Link from "next/link";
 
