@@ -1,13 +1,13 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation'; // Changed from 'next/router' to 'next/navigation'
-import BedIcon from '@mui/icons-material/Bed';
-import BathtubIcon from '@mui/icons-material/Bathtub';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
-import SwapVertIcon from '@mui/icons-material/SwapVert';
-import CropIcon from '@mui/icons-material/Crop';
+import { useRouter } from 'next/navigation';
+import Bed from '@mui/icons-material/Bed.js';
+import Bathtub from '@mui/icons-material/Bathtub.js';
+import DirectionsCar from '@mui/icons-material/DirectionsCar.js';
+import SwapHoriz from '@mui/icons-material/SwapHoriz.js';
+import SwapVert from '@mui/icons-material/SwapVert.js';
+import Crop from '@mui/icons-material/Crop.js';
 
 const HouseCard = ({ 
     title,
@@ -49,27 +49,27 @@ const HouseCard = ({
                         <h3 className="mb-3">{title}</h3>
                         <div className="house-stats d-flex gap-4 mb-3">
                             <div className="stat-item">
-                                <BedIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <Bed style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{bedrooms}</span>
                             </div>
                             <div className="stat-item">
-                                <BathtubIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <Bathtub style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{bathrooms}</span>
                             </div>
                             <div className="stat-item">
-                                <DirectionsCarIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <DirectionsCar style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{garage}</span>
                             </div>
                             <div className="stat-item">
-                                <SwapHorizIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <SwapHoriz style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{lotWidth}</span>
                             </div>
                             <div className="stat-item">
-                                <SwapVertIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <SwapVert style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{depth}</span>
                             </div>
                             <div className="stat-item">
-                                <CropIcon style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
+                                <Crop style={{ display: 'flex', gap: '10px', color: 'orange' }}/>
                                 <span>{size}</span>
                             </div>
                         </div>
