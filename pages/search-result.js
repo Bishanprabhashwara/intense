@@ -1,7 +1,7 @@
 "use client";
 
-import React, { Fragment, useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { Fragment, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation'; // Changed from 'next/router' to 'next/navigation'
 import { connect } from "react-redux";
 
 import PageTitle from '../components/pagetitle';
@@ -15,7 +15,24 @@ import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 const SearchResults = ({ addToCart }) => {
     const router = useRouter();
-    const { storeys, bedrooms, lotWidth } = router.query;
+    
+    // Since we can't directly access query params with useRouter() in App Router,
+    // we need to use the window.location.search API
+    const [queryParams, setQueryParams] = useState({
+        storeys: '',
+        bedrooms: '',
+        lotWidth: ''
+    });
+    
+    useEffect(() => {
+        // Parse URL search params
+        const urlParams = new URLSearchParams(window.location.search);
+        setQueryParams({
+            storeys: urlParams.get('storeys') || '',
+            bedrooms: urlParams.get('bedrooms') || '',
+            lotWidth: urlParams.get('lotWidth') || ''
+        });
+    }, []);
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -40,11 +57,21 @@ const SearchResults = ({ addToCart }) => {
     };
 
     const [searchParams, setSearchParams] = useState({
-        storeys: storeys || '',
-        bedrooms: bedrooms || '',
-        lotWidth: lotWidth || '',
+        storeys: '',
+        bedrooms: '',
+        lotWidth: '',
         homeSize: { min: 145, max: 500 }
     });
+    
+    // Update search params when query params are loaded
+    useEffect(() => {
+        setSearchParams(prev => ({
+            ...prev,
+            storeys: queryParams.storeys || prev.storeys,
+            bedrooms: queryParams.bedrooms || prev.bedrooms,
+            lotWidth: queryParams.lotWidth || prev.lotWidth
+        }));
+    }, [queryParams]);
 
     const handleStoreyChange = (value) => {
         setSearchParams(prev => ({
