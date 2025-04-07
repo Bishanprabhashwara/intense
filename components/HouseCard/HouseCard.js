@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
@@ -25,20 +25,18 @@ const HouseCard = ({
     const router = useRouter();
 
     const handleBuildQuote = () => {
-        router.push({
-            pathname: '/build-quote',
-            query: {
-                title,
-                bedrooms,
-                bathrooms,
-                garage,
-                lotWidth,
-                depth,
-                size,
-                floorPlan,
-                preview: currentImage
-            }
-        });
+        const queryParams = new URLSearchParams({
+            title,
+            bedrooms,
+            bathrooms,
+            garage,
+            lotWidth,
+            depth,
+            size,
+            floorPlan,
+            preview: currentImage
+        }).toString();
+        router.push(`/build-quote?${queryParams}`);
     };
 
     return (
