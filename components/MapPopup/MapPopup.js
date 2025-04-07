@@ -1,6 +1,8 @@
 import React from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
 import styles from './MapPopup.module.css';
+// const FaMapMarkerAlt = dynamic(() => import('react-icons/fa').then(mod => mod.FaMapMarkerAlt), { ssr: true });
+
 
 const MapPopup = ({ onClose, onSelectRegion }) => {
     const regions = ['North', 'North West', 'West', 'South East', 'Geelong'];
@@ -26,7 +28,7 @@ const MapPopup = ({ onClose, onSelectRegion }) => {
                                 onClose();
                             }}
                         >
-                            <FaMapMarkerAlt className={styles.regionIcon} />
+                            {/* <FaMapMarkerAlt className={styles.regionIcon} /> */}
                             <span>{region}</span>
                         </button>
                     ))}
