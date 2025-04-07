@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; // Changed from 'next/router' to 'next/navigation'
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
@@ -25,7 +25,8 @@ const HouseCard = ({
     const router = useRouter();
 
     const handleBuildQuote = () => {
-        const queryParams = new URLSearchParams({
+        // In App Router, we need to create the URL string
+        const params = new URLSearchParams({
             title,
             bedrooms,
             bathrooms,
@@ -36,7 +37,8 @@ const HouseCard = ({
             floorPlan,
             preview: currentImage
         }).toString();
-        router.push(`/build-quote?${queryParams}`);
+        
+        router.push(`/build-quote?${params}`);
     };
 
     return (
