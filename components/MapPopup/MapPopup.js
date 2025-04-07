@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import dynamic from 'next/dynamic';
+
+const FaMapMarkerAlt = dynamic(() => import('react-icons/fa').then(mod => mod.FaMapMarkerAlt), { ssr: true });
 import styles from './MapPopup.module.css';
 
 const MapPopup = ({ onClose, onSelectRegion }) => {

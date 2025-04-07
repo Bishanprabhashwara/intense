@@ -1,13 +1,12 @@
 import React from 'react';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 
-// const Typography = dynamic(() => import('@mui/material/Typography'), { ssr: true });
-// const Accordion = dynamic(() => import('@mui/material/Accordion'), { ssr: true });
-// const AccordionSummary = dynamic(() => import('@mui/material/AccordionSummary'), { ssr: true });
-// const AccordionDetails = dynamic(() => import('@mui/material/AccordionDetails'), { ssr: true });
-// const ExpandMoreIcon = dynamic(() => import('@mui/icons-material/ExpandMore'), { ssr: true });
-import { Typography,Accordion,AccordionSummary,AccordionDetails } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// Dynamic imports for MUI components
+const Typography = dynamic(() => import('@mui/material/Typography'), { ssr: false });
+const Accordion = dynamic(() => import('@mui/material/Accordion'), { ssr: false });
+const AccordionSummary = dynamic(() => import('@mui/material/AccordionSummary'), { ssr: false });
+const AccordionDetails = dynamic(() => import('@mui/material/AccordionDetails'), { ssr: false });
+const ExpandMoreIcon = dynamic(() => import('@mui/icons-material/ExpandMore'), { ssr: false });
 
 const Benefits = (props) => {
     const [expanded, setExpanded] = React.useState(false);
