@@ -11,6 +11,7 @@ import api from "../api";
 import Scrollbar from '../components/scrollbar';
 import Footer from '../components/footer';
 import HouseCard from '../components/HouseCard/HouseCard';
+import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
 
 const SearchResults = ({ addToCart }) => {
     const router = useRouter();
@@ -155,9 +156,10 @@ const SearchResults = ({ addToCart }) => {
 
     return (
         <Fragment>
-            <Navbar hclass={'wpo-header-style-3'} />
-            <PageTitle pageTitle={'Home Search'} pagesub={'Search'} />
-            <section className="wpo-shop-page mt-4">
+            <ErrorBoundary>
+                <Navbar hclass={'wpo-header-style-3'} />
+                <PageTitle pageTitle={'Home Search'} pagesub={'Search'} />
+                <section className="wpo-shop-page mt-4">
                 <div className="container">
                     <div className="search-filters p-4 bg-light rounded mb-4">
                         <div className="row">
@@ -236,8 +238,9 @@ const SearchResults = ({ addToCart }) => {
                     </div>
                 </div>
             </section>
-            <Footer />
-            <Scrollbar />
+                <Footer />
+                <Scrollbar />
+            </ErrorBoundary>
         </Fragment>
     );
 };
