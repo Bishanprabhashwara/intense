@@ -12,6 +12,7 @@ import Scrollbar from '../../components/scrollbar';
 import Footer from '../../components/footer';
 import HouseCard from '../../components/HouseCard/HouseCard';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+// Changed from 'next/router' to 'next/navigation'
 
 const SearchResults = ({ addToCart }) => {
     const router = useRouter();
@@ -37,9 +38,9 @@ const SearchResults = ({ addToCart }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const houseImages = [
-        "/images/indigosingle8.5/Indigo-155-Dutton-Twilight-350x225.png",
-        "/images/indigosingle8.5/Indigo-155-Julia-Twilight-Scheme-350x225.png",
-        "/images/indigosingle8.5/Indigo-155-Lotus-Twilight-350x225.png"
+        "/public/images/indigosingle8.5/Indigo-155-Dutton-Twilight-350x225.png",
+        "/public/images/indigosingle8.5/Indigo-155-Julia-Twilight-Scheme-350x225.png",
+        "/public/images/indigosingle8.5/Indigo-155-Lotus-Twilight-350x225.png"
     ];
 
     const nextImage = () => {
@@ -118,7 +119,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="15.59sq"
-                        floorPlan="/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
@@ -131,7 +132,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="15.21sq"
-                        floorPlan="/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
@@ -144,7 +145,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="13.13sq"
-                        floorPlan="/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
