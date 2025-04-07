@@ -11,7 +11,7 @@ import api from "../../api";
 import Scrollbar from '../../components/scrollbar';
 import Footer from '../../components/footer';
 import HouseCard from '../../components/HouseCard/HouseCard';
-import ErrorBoundary from '../components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
 
 const SearchResults = ({ addToCart }) => {
     const router = useRouter();
