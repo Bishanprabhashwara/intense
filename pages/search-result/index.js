@@ -7,6 +7,7 @@ import SearchRooms from '../../components/SearchRooms/SearchRooms';
 import api from "../../api";
 import Scrollbar from '../../components/scrollbar';
 import Footer from '../../components/footer';
+import { useRouter } from 'next/router';
 
 const SearchResults =({ addToCart }) => {
     const router = useRouter();
