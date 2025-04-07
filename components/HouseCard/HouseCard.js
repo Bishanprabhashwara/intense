@@ -1,6 +1,7 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
