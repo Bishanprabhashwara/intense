@@ -12,6 +12,11 @@ import Scrollbar from '../../components/scrollbar';
 import Footer from '../../components/footer';
 import HouseCard from '../../components/HouseCard/HouseCard';
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary';
+import img1 from '../../public/images/Indigosingle8.5/Indigo-155-Dutton-Twilight-350x225.png';
+import img2 from '../../public/images/Indigosingle8.5/Indigo-155-Julia-Twilight-Scheme-350x225.png';
+import img3 from '../../public/images/Indigosingle8.5/Indigo-155-Lotus-Twilight-350x225.png';
+import img4 from '../../public/images/Indigosingle8.5/Indigo-155-Left-1.png';
+
 // Changed from 'next/router' to 'next/navigation'
 
 const SearchResults = ({ addToCart }) => {
@@ -38,9 +43,9 @@ const SearchResults = ({ addToCart }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const houseImages = [
-        "/public/images/indigosingle8.5/Indigo-155-Dutton-Twilight-350x225.png",
-        "/public/images/indigosingle8.5/Indigo-155-Julia-Twilight-Scheme-350x225.png",
-        "/public/images/indigosingle8.5/Indigo-155-Lotus-Twilight-350x225.png"
+        img1,
+        img2,
+        img3
     ];
 
     const nextImage = () => {
@@ -119,7 +124,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="15.59sq"
-                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan={img4}
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
@@ -132,7 +137,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="15.21sq"
-                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan={img4}
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
@@ -145,7 +150,7 @@ const SearchResults = ({ addToCart }) => {
                         lotWidth={searchParams.lotWidth}
                         depth="25m"
                         size="13.13sq"
-                        floorPlan="/public/images/indigosingle8.5/Indigo-155-Left-1.png"
+                        floorPlan={img4}
                         currentImage={houseImages[currentImageIndex]}
                         onPrevImage={prevImage}
                         onNextImage={nextImage}
@@ -166,7 +171,7 @@ const SearchResults = ({ addToCart }) => {
                     lotWidth="8.5 m"
                     depth="25m"
                     size="15.59sq"
-                    floorPlan="/images/indigosingle8.5/Indigo-155-Left-1.png"
+                    floorPlan={img4}
                     currentImage={houseImages[currentImageIndex]}
                     onPrevImage={prevImage}
                     onNextImage={nextImage}
