@@ -16,6 +16,10 @@ import img1 from '../../public/images/Indigosingle8.5/Indigo-155-Dutton-Twilight
 import img2 from '../../public/images/Indigosingle8.5/Indigo-155-Julia-Twilight-Scheme-350x225.png';
 import img3 from '../../public/images/Indigosingle8.5/Indigo-155-Lotus-Twilight-350x225.png';
 import img4 from '../../public/images/Indigosingle8.5/Indigo-155-Left-1.png';
+import img5 from '../../public/images/10.5/Darley-178-Left-291x500.png';
+import img6 from '../../public/images/10.5/Fenwick-195-Left-265x500.png';
+import img7 from '../../public/images/10.5/Longwood-177-Left-1-297x500.png';
+import img8 from '../../public/images/10.5/Winton-188-Left-1-269x500.png';
 
 // Changed from 'next/router' to 'next/navigation'
 
@@ -112,7 +116,7 @@ const SearchResults = ({ addToCart }) => {
 
     const renderSearchResults = () => {
         if (searchParams.storeys === 'Single' &&
-            searchParams.bedrooms === '4' &&
+            searchParams.bedrooms === '3' &&
             searchParams.lotWidth === '8.5m') {
             return (
                 <>
@@ -161,14 +165,14 @@ const SearchResults = ({ addToCart }) => {
 
         if (searchParams.storeys === 'Single' &&
             searchParams.bedrooms === '3' &&
-            searchParams.lotWidth === '8.5m') {
+            searchParams.lotWidth === '10m') {
             return (
                 <HouseCard
                     title="Indigo"
-                    bedrooms="3"
+                    bedrooms={searchParams.bedrooms}
                     bathrooms="2"
                     garage="1"
-                    lotWidth="8.5 m"
+                    lotWidth={searchParams.lotWidth}
                     depth="25m"
                     size="15.59sq"
                     floorPlan={img4}
@@ -176,6 +180,69 @@ const SearchResults = ({ addToCart }) => {
                     onPrevImage={prevImage}
                     onNextImage={nextImage}
                 />
+            );
+        
+        }
+
+        if (searchParams.storeys === 'Single' &&
+            searchParams.bedrooms === '3' &&
+            searchParams.lotWidth === '10.5m') {
+            return (
+                <>
+                    <HouseCard
+                        title="Fenwick"
+                        bedrooms={searchParams.bedrooms}
+                        bathrooms="2"
+                        garage="1"
+                        lotWidth={searchParams.lotWidth}
+                        depth="25m"
+                        size="19.53sq"
+                        floorPlan={img6}
+                        currentImage={houseImages[currentImageIndex]}
+                        onPrevImage={prevImage}
+                        onNextImage={nextImage}
+                    />
+                    <HouseCard
+                        title="Winton"
+                        bedrooms={searchParams.bedrooms}
+                        bathrooms="2"
+                        garage="1"
+                        lotWidth={searchParams.lotWidth}
+                        depth="25m"
+                        size="18.86sq"
+                        floorPlan={img8}
+                        currentImage={houseImages[currentImageIndex]}
+                        onPrevImage={prevImage}
+                        onNextImage={nextImage}
+                    />
+                    <HouseCard
+                        title="Longwood"
+                        bedrooms={searchParams.bedrooms}
+                        bathrooms="2"
+                        garage="1"
+                        lotWidth={searchParams.lotWidth}
+                        depth="25m"
+                        size="17.76sq"
+                        floorPlan={img7}
+                        currentImage={houseImages[currentImageIndex]}
+                        onPrevImage={prevImage}
+                        onNextImage={nextImage}
+                    />
+
+                    <HouseCard
+                        title="Darley"
+                        bedrooms={searchParams.bedrooms}
+                        bathrooms="2"
+                        garage="1"
+                        lotWidth={searchParams.lotWidth}
+                        depth="25m"
+                        size="17.60sq"
+                        floorPlan={img5}
+                        currentImage={houseImages[currentImageIndex]}
+                        onPrevImage={prevImage}
+                        onNextImage={nextImage}
+                    />
+                </>
             );
         }
 
@@ -229,7 +296,7 @@ const SearchResults = ({ addToCart }) => {
                                 </div>
                             </div>
 
-                            <div className="col-md-3">
+                            {/* <div className="col-md-3">
                                 <h6>Home Size (sq)</h6>
                                 <div className="range-slider">
                                     <div className="d-flex justify-content-between">
@@ -245,7 +312,7 @@ const SearchResults = ({ addToCart }) => {
                                         onChange={handleHomeSizeChange}
                                     />
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="col-md-3">
                                 <h6>Lot Width (m)</h6>

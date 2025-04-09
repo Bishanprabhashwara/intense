@@ -77,13 +77,13 @@ const BuildQuote = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    {/* <div className="col-md-6">
                         <div className="images-container">
-                            {floorPlan && (
+                            {floorPlan && typeof floorPlan === 'string' && (
                                 <div className="mb-4">
                                     <h4>Floor Plan</h4>
                                     <Image
-                                        src={floorPlan}
+                                        src={floorPlan.startsWith('http') ? floorPlan : `/${floorPlan}`}
                                         alt="Floor Plan"
                                         width={400}
                                         height={300}
@@ -91,11 +91,11 @@ const BuildQuote = () => {
                                     />
                                 </div>
                             )}
-                            {preview && (
+                            {preview && typeof preview === 'string' && (
                                 <div>
                                     <h4>House Preview</h4>
                                     <Image
-                                        src={preview}
+                                        src={preview.startsWith('http') ? preview : `/${preview}`}
                                         alt="House Preview"
                                         width={400}
                                         height={300}
@@ -104,7 +104,7 @@ const BuildQuote = () => {
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
