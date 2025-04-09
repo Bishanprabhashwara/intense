@@ -136,12 +136,12 @@ const Hero2 = (props) => {
                 /* Modern Hero Slider Styles */
                 .hero-modern {
                     position: relative;
-                    height: 100vh;
+                    // height: 100vh;
                     overflow: hidden;
                 }
 
                 .hero-modern .slide-inner {
-                    height: 100vh;
+                    // height: 100vh;
                     background-size: cover;
                     background-position: center;
                     display: flex;
@@ -521,7 +521,7 @@ const Hero2 = (props) => {
                     }
                 }
 
-                @media (max-width: 767px) {
+                @media (max-width: 768px) {
                     .hero-modern .slide-heading h1 {
                         font-size: 2.2rem;
                     }
@@ -543,7 +543,33 @@ const Hero2 = (props) => {
                         left: 5%;
                         width: 90%;
                     }
+
+                    .service-badge{
+                        display: none;                   
+                    }
+                    
+                    .slide-discription{
+                        display: none;                   
+                    }
+
+                    .property-items {
+                        display: flex;
+                        align-items: center; /* vertically centers items */
+                        justify-content: center; /* horizontally centers items */
+                        left: 0;
+                    }
+
                 }
+
+
+                @media (max-width: 768px) {
+                    .property-carousel {
+                        left: 23rem !important;
+                        width: 100% !important;
+                        top: 27rem;
+                    }
+                }
+                    
 
                 @media (max-width: 576px) {
                     .hero-modern .slide-heading h1 {
@@ -557,6 +583,36 @@ const Hero2 = (props) => {
                     .property-item {
                         width: 100px;
                         height: 75px;
+                    }
+
+                    .service-badge{
+                        display: none;                   
+                    }
+                    
+                    .slide-discription{
+                        display: none;                   
+                    }
+                    
+                    .property-carousel {
+                        left: 12rem !important;
+                        width: 100% !important;
+                        top: 22rem;
+                    }
+                }
+
+                @media (max-width: 376px) {
+                    .property-carousel {
+                        left: 9rem !important;
+                        width: 100% !important;
+                        top: 22rem !important;  
+                    }
+                }
+
+                @media (max-width: 321px) {
+                    .property-carousel {
+                        left: 6rem !important;
+                        width: 100% !important;
+                        top: 22rem !important;  
                     }
                 }
 
