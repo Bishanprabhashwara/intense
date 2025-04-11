@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Services from '../../api/service'
 
 import about from '/public/images/blog/profile.png'
-import bicon from '/public/images/blog/icon.png'
+import bicon from '/public/images/blog/Finallogowhite.png'
 
 
 const BlogSidebar = (props) => {
@@ -45,7 +45,7 @@ const BlogSidebar = (props) => {
                         </div>
                     </form>
                 </div>
-                <div className="widget category-widget">
+                {/* <div className="widget category-widget">
                     <h3>Categories</h3>
                     <ul>
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Hotel Management<span>(8)</span></Link></li>
@@ -55,7 +55,7 @@ const BlogSidebar = (props) => {
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Travelling <span>(6)</span></Link></li>
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Hotel Room <span>(2)</span></Link></li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="widget recent-post-widget">
                     <h3>Recent posts</h3>
                     <div className="posts">
@@ -80,7 +80,7 @@ const BlogSidebar = (props) => {
                     ))}
                     </ul>
                 </div>
-                <div className="widget tag-widget">
+                {/* <div className="widget tag-widget">
                     <h3>Tags</h3>
                     <ul>
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Travelling</Link></li>
@@ -92,7 +92,7 @@ const BlogSidebar = (props) => {
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Spa</Link></li>
                         <li><Link onClick={ClickHandler} href="/blog-single/You’re-In-Dubai">Guide</Link></li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="widget get-intouch">
                     <div className="get-item">
                         <Image src={bicon} alt="" />

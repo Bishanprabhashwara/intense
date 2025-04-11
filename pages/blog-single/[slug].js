@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import blogs from '../../api/blogs'
 import Link from 'next/link'
@@ -22,9 +22,39 @@ const submitHandler = (e) => {
 
 const BlogSingle = (props) => {
     const router = useRouter()
+    const [blogContent, setBlogContent] = useState({
+        content: '',
+        quote: '',
+        conclusion: ''
+    })
 
     const BlogDetails = blogs.find(item => item.slug === router.query.slug)
 
+    useEffect(() => {
+        if (BlogDetails) {
+            if (BlogDetails.id === '1') {
+                setBlogContent({
+                    content: "Buying property in Australia can be a rewarding investment, but it requires careful planning and understanding of the local market. The Australian property market has shown resilience over the years, with steady growth in major cities like Sydney, Melbourne, and Brisbane. For international buyers, there are additional considerations including Foreign Investment Review Board (FIRB) approval and potentially higher stamp duty rates in some states. Before starting your property search, it's essential to understand your budget, preferred locations, and the type of property that suits your needs. Working with a local real estate agent who understands the market can be invaluable in finding the right property at the right price.",
+                    quote: "The Australian property market continues to be attractive for both local and international investors, with strong fundamentals supporting long-term capital growth in well-selected locations.",
+                    conclusion: "When buying property in Australia, ensure you conduct thorough due diligence, including property inspections, title searches, and understanding any zoning restrictions. Financing options vary, so shop around for the best mortgage rates and terms. Remember that property purchase involves additional costs such as stamp duty, legal fees, and inspection costs. With careful planning and professional advice, buying property in Australia can be a smooth process and a sound investment for your future."
+                })
+            } else if (BlogDetails.id === '2') {
+                setBlogContent({
+                    content: "Investing in Australian real estate requires strategic location selection to maximize returns. In 2025, several suburbs stand out for their growth potential, infrastructure development, and lifestyle appeal. Areas undergoing urban renewal or benefiting from new transport links often see significant property value increases. The top suburbs for investment span across different states, offering diverse options for investors with varying budgets. Factors to consider when evaluating investment potential include rental yield, vacancy rates, population growth, and planned infrastructure projects. Emerging suburbs in outer metropolitan areas often offer better value for money with strong growth prospects.",
+                    quote: "The best investment suburbs combine affordability with strong growth drivers such as infrastructure development, population growth, and lifestyle amenities that attract long-term tenants.",
+                    conclusion: "When considering the top 7 suburbs for investment, look beyond the current market conditions to long-term growth drivers. Areas with diverse employment opportunities, good schools, and transport connections tend to perform well over time. Consider working with a buyer's agent who specializes in investment properties to identify opportunities before they become widely known. Remember that property investment is a long-term strategy, and selecting locations with solid fundamentals will generally outperform trend-driven hotspots."
+                })
+            } else if (BlogDetails.id === '3') {
+                setBlogContent({
+                    content: "Entering the property market as a first-time buyer in Australia presents unique challenges and opportunities. Understanding the various government incentives available, such as the First Home Owner Grant and stamp duty concessions, can significantly reduce your initial costs. Before beginning your property search, it's crucial to assess your financial position, establish a realistic budget, and secure pre-approval for financing. Many first-time buyers make the mistake of overlooking additional costs such as inspection fees, legal expenses, and moving costs. Working with professionals who understand the needs of first-time buyers can help navigate the complexities of the property market.",
+                    quote: "First-time buyers should focus on properties with long-term potential rather than trying to time the market perfectly. The best time to buy your first home is when you're financially ready.",
+                    conclusion: "As a first-time buyer, consider starting with a property that meets your essential needs rather than waiting for the perfect home. The property ladder concept suggests that your first purchase is a stepping stone to future property goals. Take advantage of educational resources, attend home buyer seminars, and connect with other first-time buyers to share experiences. With proper preparation and realistic expectations, buying your first home in Australia can be an achievable and rewarding milestone."
+                })
+            }
+        }
+    }, [BlogDetails])
+
+    if (!BlogDetails) return <div>Loading...</div>
 
     return (
         <Fragment>
@@ -47,11 +77,11 @@ const BlogSingle = (props) => {
                                         </ul>
                                     </div>
                                     <h2>{BlogDetails?.title}</h2>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.</p>
+                                    <p>{blogContent.content}</p>
                                     <blockquote>
-                                        Combined with a handful of model sentence structures, generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                                        {blogContent.quote}
                                     </blockquote>
-                                    <p>I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself,</p>
+                                    <p>{blogContent.conclusion}</p>
 
                                     <div className="gallery">
                                         <div>
@@ -67,9 +97,9 @@ const BlogSingle = (props) => {
                                     <div className="tag">
                                         <span>Share: </span>
                                         <ul>
-                                            <li><Link href="/">Planning</Link></li>
-                                            <li><Link href="/">Portfolio</Link></li>
-                                            <li><Link href="/">Creative</Link></li>
+                                            <li><Link href="/">{BlogDetails?.Thumb}</Link></li>
+                                            <li><Link href="/">Real Estate</Link></li>
+                                            <li><Link href="/">Australia</Link></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -90,8 +120,8 @@ const BlogSingle = (props) => {
                                         <Link href="/" target="_blank"><Image src={blog6} alt="" /></Link>
                                     </div>
                                     <div className="author-content">
-                                        <Link href="/" className="author-name">Author: Jenny Watson</Link>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                                        <Link href="/" className="author-name">Author: {BlogDetails?.author}</Link>
+                                        <p>Real estate expert with over 10 years of experience in the Australian property market. Specializing in investment strategies, market analysis, and helping first-time buyers navigate the property landscape.</p>
                                         <div className="socials">
                                             <ul className="social-link">
                                                 <li><Link href="/"><i className="ti-facebook"></i></Link></li>
@@ -106,18 +136,14 @@ const BlogSingle = (props) => {
                                 <div className="more-posts">
                                     <div className="previous-post">
                                         <Link href="/">
-
                                             <span className="post-control-link">Previous Post</span>
-                                            <span className="post-name">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.</span>
-
+                                            <span className="post-name">Australian Property Market Trends for 2025: What Buyers Need to Know</span>
                                         </Link>
                                     </div>
                                     <div className="next-post">
                                         <Link href="/">
-
                                             <span className="post-control-link">Next Post</span>
-                                            <span className="post-name">Dignissimos ducimus qui blanditiis praesentiu deleniti atque corrupti quos dolores</span>
-
+                                            <span className="post-name">How to Maximize Your Investment Returns in the Australian Real Estate Market</span>
                                         </Link>
                                     </div>
                                 </div>
@@ -138,9 +164,7 @@ const BlogSingle = (props) => {
                                                                     At 9.00am</span></h4>
                                                             </div>
                                                             <div className="comment-area">
-                                                                <p>I will give you a complete account of the system, and
-                                                                    expound the actual teachings of the great explorer of
-                                                                    the truth, </p>
+                                                                <p>Great article! I've been looking to invest in Australian property and this provides some valuable insights. Would love to see more specific information about regional areas too.</p>
                                                                 <div className="comments-reply">
                                                                     <Link href="/" className="comment-reply-link"><span>Reply</span></Link>
                                                                 </div>
@@ -161,9 +185,7 @@ const BlogSingle = (props) => {
                                                                             12,2023 At 9.00am</span></h4>
                                                                     </div>
                                                                     <div className="comment-area">
-                                                                        <p>I will give you a complete account of the system,
-                                                                            and expound the actual teachings of the great
-                                                                            explorer of the truth, </p>
+                                                                        <p>I agree, John. Regional markets are showing strong growth potential, especially with the rise of remote work. Some areas are seeing double-digit growth.</p>
                                                                         <div className="comments-reply">
                                                                             <Link href="/" className="comment-reply-link"><span>Reply</span></Link>
                                                                         </div>
@@ -171,31 +193,6 @@ const BlogSingle = (props) => {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <ul>
-                                                            <li className="comment">
-                                                                <div>
-                                                                    <div className="comment-theme">
-                                                                        <div className="comment-image"><Image src={blog5} alt="" /></div>
-                                                                    </div>
-                                                                    <div className="comment-main-area">
-                                                                        <div className="comment-wrapper">
-                                                                            <div className="comments-meta">
-                                                                                <h4>John Abraham <span className="comments-date">January
-                                                                                    12,2023 At 9.00am</span></h4>
-                                                                            </div>
-                                                                            <div className="comment-area">
-                                                                                <p>I will give you a complete account of the
-                                                                                    system, and expound the actual teachings
-                                                                                    of the great explorer of the truth, </p>
-                                                                                <div className="comments-reply">
-                                                                                    <Link href="/" className="comment-reply-link"><span>Reply</span></Link>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -207,13 +204,11 @@ const BlogSingle = (props) => {
                                                     <div className="comment-main-area">
                                                         <div className="comment-wrapper">
                                                             <div className="comments-meta">
-                                                                <h4>John Abraham <span className="comments-date">January 12,2023
-                                                                    At 9.00am</span></h4>
+                                                                <h4>Michael Chen <span className="comments-date">January 15,2023
+                                                                    At 10.30am</span></h4>
                                                             </div>
                                                             <div className="comment-area">
-                                                                <p>I will give you a complete account of the system, and
-                                                                    expound the actual teachings of the great explorer of
-                                                                    the truth, </p>
+                                                                <p>As a first-time buyer, I found this information really helpful. The section on government incentives was particularly useful. Looking forward to more articles on this topic!</p>
                                                                 <div className="comments-reply">
                                                                     <Link href="/" className="comment-reply-link"><span>Reply</span></Link>
                                                                 </div>
