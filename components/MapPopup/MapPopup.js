@@ -15,36 +15,41 @@ const MapPopup = ({ onClose, onSelectRegion }) => {
     const [mapLoaded, setMapLoaded] = useState(false);
     const mapContainerRef = useRef(null);
 
-    // Map region coordinates and paths (simplified for Melbourne regions)
+    // Updated region paths to better match Melbourne's geography
     const regionPaths = {
         'North': {
-            path: "M150,100 L200,50 L250,70 L270,120 L230,150 L180,140 Z",
+            // Covers Craigieburn, Epping, South Morang areas
+            path: "M200,80 L240,50 L280,70 L290,120 L260,150 L220,140 Z",
             color: "#4CAF50",
-            center: { x: 210, y: 100 },
+            center: { x: 250, y: 100 },
             mapCenter: { lat: -37.65, lng: 145.05 }
         },
         'North West': {
-            path: "M100,120 L150,100 L180,140 L170,180 L120,190 L80,160 Z",
+            // Covers Essendon, Moonee Ponds, Broadmeadows
+            path: "M150,120 L200,100 L220,140 L210,180 L170,190 L130,160 Z",
             color: "#2196F3",
-            center: { x: 130, y: 140 },
+            center: { x: 180, y: 140 },
             mapCenter: { lat: -37.7, lng: 144.85 }
         },
         'West': {
-            path: "M80,160 L120,190 L130,240 L90,270 L50,240 L40,190 Z",
+            // Covers Footscray, Sunshine, Werribee
+            path: "M130,160 L170,190 L160,240 L120,270 L80,240 L90,190 Z",
             color: "#FFC107",
-            center: { x: 85, y: 215 },
+            center: { x: 125, y: 215 },
             mapCenter: { lat: -37.8, lng: 144.75 }
         },
         'South East': {
-            path: "M230,150 L270,120 L320,140 L340,190 L300,230 L250,210 Z",
+            // Covers Dandenong, Cranbourne, Frankston
+            path: "M260,150 L290,120 L330,140 L350,190 L310,230 L270,210 Z",
             color: "#FF5722",
-            center: { x: 285, y: 175 },
+            center: { x: 300, y: 175 },
             mapCenter: { lat: -37.9, lng: 145.2 }
         },
         'Geelong': {
-            path: "M100,300 L150,280 L180,310 L160,350 L110,360 L80,330 Z",
+            // Covers Geelong area
+            path: "M80,300 L130,280 L160,310 L140,350 L90,360 L60,330 Z",
             color: "#9C27B0",
-            center: { x: 130, y: 320 },
+            center: { x: 110, y: 320 },
             mapCenter: { lat: -38.15, lng: 144.35 }
         }
     };
@@ -53,6 +58,16 @@ const MapPopup = ({ onClose, onSelectRegion }) => {
     const handleRegionHover = (region) => {
         setHoveredRegion(region);
     };
+
+    // Calculate map bounds to ensure all regions are visible
+    const getMapBounds = () => {
+        return {
+            center: { lat: -37.85, lng: 144.85 }, // Slightly adjusted center
+            zoom: hoveredRegion ? 10 : 9
+        };
+    };
+
+    const mapSettings = getMapBounds();
 
     return (
         <div className={styles.mapPopupOverlay} onClick={onClose}>
@@ -71,26 +86,37 @@ const MapPopup = ({ onClose, onSelectRegion }) => {
                     {/* OpenStreetMap background */}
                     <div className={styles.backgroundMap}>
                         <OpenStreetMapComponent 
-                            center={hoveredRegion ? regionPaths[hoveredRegion].mapCenter : { lat: -37.8136, lng: 144.9631 }}
-                            zoom={hoveredRegion ? 11 : 9}
+                            center={hoveredRegion ? regionPaths[hoveredRegion].mapCenter : mapSettings.center}
+                            zoom={mapSettings.zoom}
                             onLoad={() => setMapLoaded(true)}
                         />
                     </div>
                     
-                    {/* SVG overlay for regions */}
+                    {/* SVG overlay for regions - adjusted viewBox for better alignment */}
                     <svg 
                         width="100%" 
                         height="100%" 
                         viewBox="0 0 400 400" 
+                        preserveAspectRatio="xMidYMid meet"
                         className={styles.melbourneMap}
                         style={{ opacity: mapLoaded ? 1 : 0.5 }}
                     >
+                        {/* Port Phillip Bay representation */}
+                        <path 
+                            d="M170,180 C200,170 230,180 250,210 C270,240 260,280 230,300 C200,320 160,310 140,280 C120,250 140,190 170,180 Z" 
+                            fill="#ADD8E6" 
+                            fillOpacity="0.3"
+                            stroke="#87CEEB" 
+                            strokeWidth="1"
+                        />
+                        
                         {/* Region paths */}
                         {regions.map(region => (
                             <g key={region}>
                                 <path
                                     d={regionPaths[region].path}
                                     fill={hoveredRegion === region ? regionPaths[region].color : `${regionPaths[region].color}80`}
+                                    fillOpacity="0.6"
                                     stroke="#333"
                                     strokeWidth="2"
                                     className={styles.regionPath}
@@ -109,6 +135,7 @@ const MapPopup = ({ onClose, onSelectRegion }) => {
                                     fontSize="14"
                                     fontWeight="bold"
                                     className={styles.regionLabel}
+                                    pointerEvents="none"
                                 >
                                     {region}
                                 </text>
