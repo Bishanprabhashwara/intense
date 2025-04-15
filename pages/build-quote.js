@@ -5,9 +5,6 @@ import dynamic from 'next/dynamic';
 import Navbar from '../components/Navbar';
 import PageTitle from '../components/pagetitle';
 import MapPopup from '../components/MapPopup/MapPopup';
-
-// const Dialog = dynamic(() => import('@mui/material/Dialog'), { ssr: true });
-// const DialogContent = dynamic(() => import('@mui/material/DialogContent/index.js'), { ssr: true });
 import {Dialog,DialogContent} from '@mui/material';
 
 const BuildQuote = () => {
@@ -26,6 +23,17 @@ const BuildQuote = () => {
         preview 
     } = router.query;
 
+    // Define region multipliers outside of the calculatePrice function so it can be accessed in the JSX
+    const regionMultipliers = {
+        'North': 1.3,
+        'North West': 1.2,
+        'West': 1.1,
+        'South East': 1.4,
+        'Geelong': 1.0,
+        // Default multiplier if region not found
+        'default': 1.0
+    };
+
     useEffect(() => {
         // Show map popup when component mounts
         setShowMap(true);
@@ -39,20 +47,6 @@ const BuildQuote = () => {
 
         // Base price per square meter
         const basePricePerSqm = 1500;
-        
-        // Region multipliers
-        const regionMultipliers = {
-            'Sydney': 1.5,
-            'Melbourne': 1.3,
-            'Brisbane': 1.1,
-            'Perth': 1.0,
-            'Adelaide': 0.9,
-            'Gold Coast': 1.2,
-            'Newcastle': 0.95,
-            'Canberra': 1.25,
-            // Default multiplier if region not found
-            'default': 1.0
-        };
         
         // Get region multiplier or use default
         const regionMultiplier = regionMultipliers[selectedRegion] || regionMultipliers.default;
@@ -74,11 +68,33 @@ const BuildQuote = () => {
         
         // Round to nearest thousand
         return Math.round(totalPrice / 1000) * 1000;
-    }, [bedrooms, bathrooms, garage, size, selectedRegion]);
+    }, [bedrooms, bathrooms, garage, size, selectedRegion, regionMultipliers]);
 
     // Format price with commas
     const formatPrice = (price) => {
         return price ? price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : "0";
+    };
+
+    // Function to handle proceeding to quote summary
+    const handleProceedToSummary = () => {
+        // Create an object with all the quote data
+        const quoteData = {
+            title,
+            bedrooms,
+            bathrooms,
+            garage,
+            lotWidth,
+            depth,
+            size,
+            floorPlan,
+            preview,
+            selectedRegion,
+            totalPrice: calculatePrice
+        };
+        
+        // Convert to query string and navigate to summary page
+        const queryString = new URLSearchParams(quoteData).toString();
+        router.push(`/quote-summary?${queryString}`);
     };
 
     return (
@@ -108,16 +124,12 @@ const BuildQuote = () => {
 
             <div className="container my-5">
                 <div className="row">
+                    {/* Left Column - House Details */}
                     <div className="col-md-6">
                         <h2>{title} - Build Quote</h2>
                         {selectedRegion && (
                             <div className="selected-region mb-3">
                                 <h5>Selected Region: {selectedRegion}</h5>
-                                <div className="price-estimate mt-2 p-3 bg-light border rounded">
-                                    <h3 className="text-primary">Estimated Build Price</h3>
-                                    <h2 className="display-4">${formatPrice(calculatePrice)}</h2>
-                                    <p className="text-muted">This is an estimate based on your specifications and location</p>
-                                </div>
                             </div>
                         )}
                         <div className="specs-list mt-4">
@@ -131,7 +143,44 @@ const BuildQuote = () => {
                                 <li className="list-group-item">Size: {size} m²</li>
                             </ul>
                             
-                            {calculatePrice && (
+                            {/* {floorPlan && typeof floorPlan === 'string' && (
+                                <div className="mt-4">
+                                    <h4>Floor Plan</h4>
+                                    <Image
+                                        src={floorPlan.startsWith('http') ? floorPlan : `/${floorPlan}`}
+                                        alt="Floor Plan"
+                                        width={400}
+                                        height={300}
+                                        className="img-fluid border"
+                                    />
+                                </div>
+                            )} */}
+                            
+                            {/* {preview && typeof preview === 'string' && (
+                                <div className="mt-4">
+                                    <h4>House Preview</h4>
+                                    <Image
+                                        src={preview.startsWith('http') ? preview : `/${preview}`}
+                                        alt="House Preview"
+                                        width={400}
+                                        height={300}
+                                        className="img-fluid border"
+                                    />
+                                </div>
+                            )} */}
+                        </div>
+                    </div>
+                    
+                    {/* Right Column - Price Breakdown */}
+                    <div className="col-md-6">
+                        {calculatePrice && (
+                            <>
+                                <div className="price-estimate p-3 bg-light border rounded">
+                                    <h3 className="text-primary">Estimated Build Price</h3>
+                                    <h2 className="display-4">${formatPrice(calculatePrice)}</h2>
+                                    <p className="text-muted">This is an estimate based on your specifications and location</p>
+                                </div>
+                                
                                 <div className="price-breakdown mt-4">
                                     <h4>Price Breakdown:</h4>
                                     <ul className="list-group">
@@ -140,8 +189,20 @@ const BuildQuote = () => {
                                             <strong>${formatPrice(Math.round(parseFloat(size) * 1500))}</strong>
                                         </li>
                                         <li className="list-group-item d-flex justify-content-between">
-                                            <span>Region Adjustment:</span>
-                                            <strong>{selectedRegion} Factor</strong>
+                                            <span>Bedrooms Premium:</span>
+                                            <strong>+${formatPrice(Math.round(parseFloat(size) * 1500 * 0.05 * parseInt(bedrooms)))}</strong>
+                                        </li>
+                                        <li className="list-group-item d-flex justify-content-between">
+                                            <span>Bathrooms Premium:</span>
+                                            <strong>+${formatPrice(Math.round(parseFloat(size) * 1500 * 0.07 * parseInt(bathrooms)))}</strong>
+                                        </li>
+                                        <li className="list-group-item d-flex justify-content-between">
+                                            <span>Garage Premium:</span>
+                                            <strong>+${formatPrice(Math.round(parseFloat(size) * 1500 * 0.03 * parseInt(garage)))}</strong>
+                                        </li>
+                                        <li className="list-group-item d-flex justify-content-between">
+                                            <span>Region Adjustment ({selectedRegion}):</span>
+                                            <strong>×{(regionMultipliers[selectedRegion] || regionMultipliers.default).toFixed(1)}</strong>
                                         </li>
                                         <li className="list-group-item d-flex justify-content-between">
                                             <span>Features & Fixtures:</span>
@@ -153,37 +214,32 @@ const BuildQuote = () => {
                                         </li>
                                     </ul>
                                 </div>
-                            )}
-                        </div>
+                                
+                                <div className="mt-4 d-grid">
+                                    <button 
+                                        className="btn btn-primary btn-lg" 
+                                        onClick={handleProceedToSummary}
+                                    >
+                                        Proceed to Quote Summary
+                                    </button>
+                                </div>
+                            </>
+                        )}
+                        
+                        {!calculatePrice && selectedRegion && (
+                            <div className="alert alert-info">
+                                <h4>Calculating your quote...</h4>
+                                <p>We're preparing your personalized quote based on the information provided.</p>
+                            </div>
+                        )}
+                        
+                        {!selectedRegion && (
+                            <div className="alert alert-warning">
+                                <h4>Please Select a Region</h4>
+                                <p>To get an accurate quote, please select your building region from the map.</p>
+                            </div>
+                        )}
                     </div>
-                    {/* <div className="col-md-6">
-                        <div className="images-container">
-                            {floorPlan && typeof floorPlan === 'string' && (
-                                <div className="mb-4">
-                                    <h4>Floor Plan</h4>
-                                    <Image
-                                        src={floorPlan.startsWith('http') ? floorPlan : `/${floorPlan}`}
-                                        alt="Floor Plan"
-                                        width={400}
-                                        height={300}
-                                        className="img-fluid"
-                                    />
-                                </div>
-                            )}
-                            {preview && typeof preview === 'string' && (
-                                <div>
-                                    <h4>House Preview</h4>
-                                    <Image
-                                        src={preview.startsWith('http') ? preview : `/${preview}`}
-                                        alt="House Preview"
-                                        width={400}
-                                        height={300}
-                                        className="img-fluid"
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </>
