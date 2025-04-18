@@ -194,6 +194,52 @@ Thank you.
             <Navbar hclass={'wpo-header-style-3'} />
             <PageTitle pageTitle={'Contact Sales Team'} pagesub={'Contact'} />
             
+            {/* Progress Indicator */}
+            <div className="container mt-4 mb-5">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="d-flex justify-content-between align-items-center flex-wrap">
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark">✓</span>
+                                </div>
+                                <div className="step-label">BUILD YOUR QUOTE</div>
+                            </div>
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark">✓</span>
+                                </div>
+                                <div className="step-label">FLOORPLAN</div>
+                            </div>
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark">✓</span>
+                                </div>
+                                <div className="step-label">FACADE</div>
+                            </div>
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark">✓</span>
+                                </div>
+                                <div className="step-label">COLOURS</div>
+                            </div>
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark">✓</span>
+                                </div>
+                                <div className="step-label">UPGRADES</div>
+                            </div>
+                            <div className="progress-step active">
+                                <div className="step-circle">
+                                    <span>6</span>
+                                </div>
+                                <div className="step-label">SUMMARY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div className="container my-5">
                 {emailError && (
                     <div className="alert alert-danger mb-4">
