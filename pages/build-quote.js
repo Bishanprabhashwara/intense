@@ -6,6 +6,13 @@ import Navbar from '../components/Navbar';
 import PageTitle from '../components/pagetitle';
 import MapPopup from '../components/MapPopup/MapPopup';
 import {Dialog,DialogContent} from '@mui/material';
+import img4 from '../public/images/Indigosingle8.5/Indigo-155-Left-1.png';
+import img5 from '../public/images/10.5/Darley-178-Left-291x500.png';
+import img6 from '../public/images/10.5/Fenwick-195-Left-265x500.png';
+import img7 from '../public/images/10.5/Longwood-177-Left-1-297x500.png';
+import img8 from '../public/images/10.5/Winton-188-Left-1-269x500.png';
+import Bathtub from '@mui/icons-material/Bathtub.js';
+
 
 const BuildQuote = () => {
     const router = useRouter();
@@ -20,8 +27,29 @@ const BuildQuote = () => {
         depth, 
         size, 
         floorPlan, 
-        preview 
+        preview,
+        storeys
     } = router.query;
+
+    // Function to determine which floor plan image to use based on house specs
+    const getFloorPlanImage = () => {
+        if (bedrooms === '3' && lotWidth === '8.5m') {
+            return img4;
+        } else if (bedrooms === '3' && lotWidth === '10m') {
+            return img4;
+        } else if (bedrooms === '3' && lotWidth === '10.5m') {
+            if (title === 'Fenwick') {
+                return img6;
+            } else if (title === 'Winton') {
+                return img8;
+            } else if (title === 'Longwood') {
+                return img7;
+            } else if (title === 'Darley') {
+                return img5;
+            }
+        }
+        return null;
+    };
 
     // Define region multipliers outside of the calculatePrice function so it can be accessed in the JSX
     const regionMultipliers = {
@@ -102,6 +130,52 @@ const BuildQuote = () => {
             <Navbar hclass={'wpo-header-style-3'} />
             <PageTitle pageTitle={'Build Quote'} pagesub={'Quote'} />
             
+            {/* Progress Indicator */}
+            <div className="container mt-4 mb-5">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="d-flex justify-content-between align-items-center flex-wrap">
+                            <div className="progress-step completed">
+                                <div className="step-circle">
+                                    <span className="checkmark active">✓</span>
+                                </div>
+                                <div className="step-label">BUILD YOUR QUOTE</div>
+                            </div>
+                            <div className="progress-step">
+                            <div className="step-circle">
+                                    <span>2</span>
+                                </div>
+                                <div className="step-label">FLOORPLAN</div>
+                            </div>
+                            <div className="progress-step">
+                            <div className="step-circle">
+                                    <span>3</span>
+                                </div>
+                                <div className="step-label">FACADE</div>
+                            </div>
+                            <div className="progress-step">
+                                <div className="step-circle">
+                                    <span>4</span>
+                                </div>
+                                <div className="step-label">COLOURS</div>
+                            </div>
+                            <div className="progress-step">
+                                <div className="step-circle">
+                                    <span>5</span>
+                                </div>
+                                <div className="step-label">UPGRADES</div>
+                            </div>
+                            <div className="progress-step">
+                                <div className="step-circle">
+                                    <span>6</span>
+                                </div>
+                                <div className="step-label">SUMMARY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <Dialog 
                 open={showMap}
                 onClose={() => setShowMap(false)}
@@ -133,7 +207,7 @@ const BuildQuote = () => {
                             </div>
                         )}
                         <div className="specs-list mt-4">
-                            <h4>House Specifications:</h4>
+                            {/* <h4>House Specifications:</h4>
                             <ul className="list-group">
                                 <li className="list-group-item">Bedrooms: {bedrooms}</li>
                                 <li className="list-group-item">Bathrooms: {bathrooms}</li>
@@ -141,20 +215,61 @@ const BuildQuote = () => {
                                 <li className="list-group-item">Lot Width: {lotWidth}</li>
                                 <li className="list-group-item">Depth: {depth}</li>
                                 <li className="list-group-item">Size: {size} m²</li>
-                            </ul>
+                            </ul> */}
                             
-                            {/* {floorPlan && typeof floorPlan === 'string' && (
-                                <div className="mt-4">
-                                    <h4>Floor Plan</h4>
-                                    <Image
-                                        src={floorPlan.startsWith('http') ? floorPlan : `/${floorPlan}`}
-                                        alt="Floor Plan"
-                                        width={400}
-                                        height={300}
-                                        className="img-fluid border"
-                                    />
+                            {/* House Card Section - Styled like the image */}
+                            <div className="house-card mt-5 border rounded overflow-hidden">
+                                <div className="row g-0">
+                                    <div className="col-md-6 p-3">
+                                        <Image
+                                            src={getFloorPlanImage() || (floorPlan && typeof floorPlan === 'string' && 
+                                                (floorPlan.startsWith('http') ? floorPlan : `/${floorPlan}`))}
+                                            alt="Floor Plan"
+                                            width={400}
+                                            height={500}
+                                            className="img-fluid"
+                                        />
+                                    </div>
+                                    <div className="col-md-6 p-4">
+                                        <h2 className="text-uppercase fw-bold mb-2">{title} {size}</h2>
+                                        <a href="#" className="text-decoration-none text-primary">View Floorplan</a>
+                                        
+                                        <button className="btn btn-warning d-block my-3 w-100">INCLUSIONS</button>
+                                        
+                                        <div className="specs-icons my-4">
+                                            <div className="d-flex align-items-center mb-3">
+                                                <span className="me-3" style={{color: '#f47920', fontSize: '24px'}}>
+                                                    <i className="fa fa-bed"></i>
+                                                </span>
+                                                <span className="fs-3">{bedrooms}</span>
+                                            </div>
+                                            
+                                            <div className="d-flex align-items-center mb-3">
+                                                <span className="me-3" style={{color: '#f47920', fontSize: '24px'}}>
+                                                <Bathtub style={{ display: 'flex', gap: '10px'}}/>
+                                                </span>
+                                                <span className="fs-3">{bathrooms}</span>
+                                            </div>
+                                            
+                                            <div className="d-flex align-items-center mb-3">
+                                                <span className="me-3" style={{color: '#f47920', fontSize: '24px'}}>
+                                                    <i className="fa fa-car"></i>
+                                                </span>
+                                                <span className="fs-3">{garage}</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="house-dimensions mt-4">
+                                            <p className="mb-1">Min Frontage: <span className="text-primary fw-bold">{lotWidth}</span></p>
+                                            <p className="mb-1">Min Depth: <span className="text-primary fw-bold">{depth}</span></p>
+                                            <p className="mb-1">Total Area: <span className="text-primary fw-bold">{size}sq</span></p>
+                                        </div>
+                                    </div>
                                 </div>
-                            )} */}
+                                <div className="bg-secondary text-white p-3 text-center">
+                                    <h3 className="mb-0">$ {formatPrice(calculatePrice || 234684)}</h3>
+                                </div>
+                            </div>
                             
                             {/* {preview && typeof preview === 'string' && (
                                 <div className="mt-4">
