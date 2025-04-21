@@ -9,6 +9,7 @@ const About = (props) => {
      }
     return(
         <div className="wpo-about-area section-padding">
+            
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-7 col-md-12 col-sm-12">
@@ -18,7 +19,7 @@ const About = (props) => {
                     </div>
                     <div className="col-lg-5 col-md-12 colsm-12">
                         <div className="wpo-about-text">
-                            <div className="wpo-section-title">
+                            <div className="wpo-section-title">   
                                 <span>About Us</span>
                                 <h2>Your Trusted  <br/> Real Estate Partner</h2>
                             </div>
