@@ -290,13 +290,34 @@ const BuildQuote = () => {
                     <div className="col-md-6">
                         {calculatePrice && (
                             <>
-                                <div className="price-estimate p-3 bg-light border rounded">
-                                    <h3 className="text-primary">Estimated Build Price</h3>
-                                    <h2 className="display-4">${formatPrice(calculatePrice)}</h2>
-                                    <p className="text-muted">This is an estimate based on your specifications and location</p>
+                                <div className="quote-summary p-4 bg-white border rounded shadow-sm" style={{ marginTop: '7rem' }}>
+                                    <h2 className="mb-4">QUOTE SUMMARY</h2>
+                                    
+                                    <div className="floorplan-section mb-4">
+                                        <h5 className="text-uppercase mb-3">FLOORPLAN</h5>
+                                        <div className="d-flex justify-content-between align-items-center mb-2">
+                                            <span>Floorplan Name:</span>
+                                            <span className="text-primary">{title || 'Indigo 155'}</span>
+                                            <span className="text-primary">${formatPrice(calculatePrice)}</span>
+                                        </div>
+                                        <hr />
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <span>Subtotal:</span>
+                                            <span className="text-primary">${formatPrice(calculatePrice)}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr className="my-4" />
+                                    
+                                    <div className="total-section">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <h5 className="mb-0">TOTAL:</h5>
+                                            <h3 className="text-primary mb-0">${formatPrice(calculatePrice)}</h3>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div className="price-breakdown mt-4">
+                                {/* <div className="price-breakdown mt-4">
                                     <h4>Price Breakdown:</h4>
                                     <ul className="list-group">
                                         <li className="list-group-item d-flex justify-content-between">
@@ -328,7 +349,7 @@ const BuildQuote = () => {
                                             <strong className="text-primary">${formatPrice(calculatePrice)}</strong>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> */}
                                 
                                 <div className="mt-4 d-grid">
                                     <button 
