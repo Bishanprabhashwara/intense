@@ -335,7 +335,7 @@ const BuildQuote = () => {
                                         className="btn btn-primary btn-lg" 
                                         onClick={handleProceedToSummary}
                                     >
-                                        Proceed to Quote Summary
+                                        Next
                                     </button>
                                 </div>
                             </>
