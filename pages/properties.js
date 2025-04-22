@@ -127,7 +127,7 @@ const Properties = () => {
                                         {property.featured && (
                                             <span className="featured-badge">Featured</span>
                                         )}
-                                        <div className="property-price">{property.price}</div>
+                                        {/* <div className="property-price">{property.price}</div> */}
                                     </div>
                                     <div className="property-info p-4">
                                         <h3><Link href={`/property-single?id=${property.id}`}>{property.title}</Link></h3>
