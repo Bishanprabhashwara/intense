@@ -577,24 +577,12 @@ const QuoteSummary = () => {
                                             <td>${formatPrice(Math.round(parseFloat(quoteData.size) * 1500))}</td>
                                         </tr>
                                         <tr>
-                                            <th>Bedrooms Premium</th>
-                                            <td>+5% per bedroom</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Bathrooms Premium</th>
-                                            <td>+7% per bathroom</td>
-                                        </tr>
-                                        <tr>
-                                            <th>Garage Premium</th>
-                                            <td>+3% per garage space</td>
-                                        </tr>
-                                        <tr>
                                             <th>Region Factor</th>
-                                            <td>{quoteData.selectedRegion}</td>
+                                            <td>+${formatPrice(Math.round(parseFloat(quoteData.size) * 1500 * 0.1))}</td>
                                         </tr>
                                         <tr>
                                             <th>Base House Price</th>
-                                            <td>${formatPrice(quoteData.totalPrice)}</td>
+                                            <td>${formatPrice(Math.round(parseFloat(quoteData.size) * 1500))}</td>
                                         </tr>
                                         <tr>
                                             <th>Color Scheme ({colorSchemes[selectedColorScheme].name})</th>
