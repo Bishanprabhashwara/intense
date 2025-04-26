@@ -516,6 +516,12 @@ const QuoteSummary = () => {
                     .swiper-pagination-bullet-active {
                         background: #0d6efd;
                     }
+                    
+                    @media (max-width: 992px) {
+                        .position-fixed.end-0.top-50 {
+                            display: none !important;
+                        }
+                    }
                 `}</style>
             </>
         );

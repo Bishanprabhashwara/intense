@@ -148,9 +148,18 @@ Thank you.
                     setIsSubmitting(false);
                     setSubmitSuccess(true);
                     
-                    // Redirect to thank you page after 2 seconds
+                    // Create a combined data object with form and quote data
+                    const combinedData = {
+                        ...formData,
+                        ...quoteData
+                    };
+                    
+                    // Encode the data for URL
+                    const queryString = new URLSearchParams(combinedData).toString();
+                    
+                    // Redirect to thank you page after 2 seconds with all data
                     setTimeout(() => {
-                        router.push('/thank-you');
+                        router.push(`/thank-you?${queryString}`);
                     }, 2000);
                 }, 1000);
             } catch (error) {
