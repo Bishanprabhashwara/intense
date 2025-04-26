@@ -9,26 +9,26 @@ const Hero2 = (props) => {
     const [activeProperty, setActiveProperty] = useState(0);
     
     const properties = [
-        { name: "Commercial Property", image: "/images/slider/hero2.png" },
-        { name: "Smart Apartment", image: "/images/slider/hero5.jpg" },
-        { name: "Luxury Property", image: "/images/slider/hero3.jpg" }
+        { name: "Commercial Property", image: "/images/slider/home1.jpg" },
+        { name: "Smart Apartment", image: "/images/slider/home3.jpg" },
+        { name: "Luxury Property", image: "/images/slider/home4.jpg" }
     ];
     
     const slides = [
         {
-            bgImage: "/images/slider/hero2.png",
+            bgImage: "/images/slider/home1.jpg",
             heading: "WE CRAFT FUTURE\nDREAM HOME",
             cta: { text: "Request A Visit", link: "/contact" },
             description: "Realtor Vacation stands for exceptional luxury properties and single properties in the most sought-after districts of the city. Turning houses become dreams as your go-to real estate agent. You can rely on us to help you safely home."
         },
         {
-            bgImage: "/images/slider/hero5.jpg",
+            bgImage: "/images/slider/home3.jpg",
             heading: "FIND YOUR\nPERFECT HOME",
             cta: { text: "Browse Properties", link: "/properties" },
             description: "Experience the finest selection of properties carefully curated by our expert agents. From urban apartments to suburban estates, we have the perfect home waiting for you and your family."
         },
         {
-            bgImage: "/images/slider/hero3.jpg",
+            bgImage: "/images/slider/home4.jpg",
             heading: "LUXURY LIVING\nREDEFINED",
             cta: { text: "Explore Luxury", link: "/luxury" },
             description: "Explore our exclusive premium properties, where luxury meets impeccable design, extraordinary amenities, and prime locations."
@@ -141,7 +141,7 @@ const Hero2 = (props) => {
                 }
 
                 .hero-modern .slide-inner {
-                    // height: 100vh;
+                    height: 100vh;
                     background-size: cover;
                     background-position: center;
                     display: flex;
@@ -162,7 +162,7 @@ const Hero2 = (props) => {
                     font-weight: 700;
                     letter-spacing: 1px;
                     margin-bottom: 2rem;
-                    top: 0;
+                    // top: 0;
                     line-height: 1.2;
                     text-transform: uppercase;
                     color: rgba(255, 255, 255, 1) !important;
