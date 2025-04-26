@@ -31,7 +31,7 @@ const SearchSection = (props) => {
     const queryString = `?storeys=${formData.storeys}&bedrooms=${formData.bedrooms}&lotWidth=${formData.lotWidth}`;
 
     return(
-        <div className={`wpo-select-section ${props.selectClass}`}>
+        <div className={`wpo-select-section ${props.selectClass}`} style={{marginTop: '-5%'}} >
             <div className="container rounded">
                 <div className="row">
                     <div className="col-lg-12">

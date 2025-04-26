@@ -289,7 +289,9 @@ const QuoteSummary = () => {
                     </div>
                 </div>
                 
-                <div className="container my-5">
+{/* =========================================================================== */}
+                {/* Customize Your Home */}
+                <div className="my-1" style={{ position: 'relative', margin: '0 5%' }}>
                     <div className="card shadow-sm">
                         <div className="card-header bg-primary text-white">
                             <div className="d-flex justify-content-between align-items-center">
@@ -302,6 +304,7 @@ const QuoteSummary = () => {
                         </div>
                         
                         <div className="card-body">
+                            
                             <div className="row mb-4">
                                 <div className="col-md-6">
                                     <h4>{quoteData.title}</h4>
@@ -314,167 +317,137 @@ const QuoteSummary = () => {
                             </div>
                             
                             <hr />
-                            
-                            <div className="row">
-                                <div className="col-12">
-                                    <h5 className="text-center mb-4">Choose Your Color Scheme</h5>
-                                    <p className="text-center text-muted mb-4">Select a color palette that matches your style and personality. Your choice will influence the interior and exterior finishes of your new home.</p>
-                                    
-                                    {/* Color Scheme Slider */}
-                                    <div className="color-scheme-slider mb-5">
-                                        <Swiper
-                                            modules={[Navigation, Pagination]}
-                                            spaceBetween={30}
-                                            slidesPerView={1}
-                                            navigation
-                                            pagination={{ clickable: true }}
-                                            breakpoints={{
-                                                640: {
-                                                    slidesPerView: 1,
-                                                },
-                                                768: {
-                                                    slidesPerView: 2,
-                                                },
-                                                1024: {
-                                                    slidesPerView: 3,
-                                                },
-                                            }}
-                                            onSlideChange={(swiper) => {
-                                                setActiveSlide(swiper.activeIndex);
-                                                const schemeKeys = Object.keys(colorSchemes);
-                                                if (schemeKeys[swiper.activeIndex]) {
-                                                    handleColorSchemeChange(schemeKeys[swiper.activeIndex]);
-                                                }
-                                            }}
-                                            className="mySwiper"
-                                        >
-                                            {Object.keys(colorSchemes).map((scheme, index) => (
-                                                <SwiperSlide key={scheme}>
-                                                    <div 
-                                                        className={`card h-100 ${selectedColorScheme === scheme ? 'border-primary border-3' : ''}`}
-                                                        onClick={() => handleColorSchemeChange(scheme)}
-                                                        style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                                                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
-                                                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                                                    >
-                                                        <div className="position-relative" style={{ height: '220px' }}>
-                                                            <Image
-                                                                src={colorSchemes[scheme].image}
-                                                                alt={colorSchemes[scheme].name}
-                                                                layout="fill"
-                                                                objectFit="cover"
-                                                                className="card-img-top"
-                                                            />
-                                                            {selectedColorScheme === scheme && (
-                                                                <div className="position-absolute top-0 end-0 p-2">
-                                                                    <span className="badge bg-primary">Selected</span>
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">{colorSchemes[scheme].name}</h5>
-                                                            <p className="card-text">{colorSchemes[scheme].description}</p>
-                                                            <div className="d-flex justify-content-between mt-3">
-                                                                {colorSchemes[scheme].colors.map((color, index) => (
-                                                                    <div 
-                                                                        key={index} 
-                                                                        style={{
-                                                                            backgroundColor: color,
-                                                                            width: '25px',
-                                                                            height: '25px',
-                                                                            borderRadius: '50%',
-                                                                            border: '1px solid #ddd'
-                                                                        }}
-                                                                    ></div>
-                                                                ))}
-                                                            </div>
-                                                            <div className="mt-3">
-                                                                <span className={`badge ${scheme === 'driftwood' ? 'bg-success' : 'bg-secondary'} p-2`}>
-                                                                    {scheme === 'driftwood' ? 'Included in Base Price' : `+$${formatPrice(colorSchemes[scheme].priceAdjustment)}`}
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </SwiperSlide>
-                                            ))}
-                                        </Swiper>
+
+                        {/* *************************************************************************** */}
+                        <div className="row" style={{ display: 'flex' }}>
+                        {/* Left: Color Scheme Section */}
+                        <div>
+                            <h5 className="text-center mb-4">Choose Your Color Scheme</h5>
+                            <p className="text-center text-muted mb-4">
+                            Select a color palette that matches your style and personality. Your choice will influence the interior and exterior finishes of your new home.
+                            </p>
+                        </div>
+
+                        <div className="col-md-8">
+                            {/* Color Scheme Slider */}
+                            <div className="color-scheme-slider mb-5">
+                            <Swiper
+                                modules={[Navigation, Pagination]}
+                                spaceBetween={30}
+                                slidesPerView={1}
+                                navigation
+                                pagination={{ clickable: true }}
+                                breakpoints={{
+                                640: {
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 3,
+                                },
+                                }}
+                                onSlideChange={(swiper) => {
+                                setActiveSlide(swiper.activeIndex);
+                                const schemeKeys = Object.keys(colorSchemes);
+                                if (schemeKeys[swiper.activeIndex]) {
+                                    handleColorSchemeChange(schemeKeys[swiper.activeIndex]);
+                                }
+                                }}
+                                className="mySwiper"
+                            >
+                                {Object.keys(colorSchemes).map((scheme) => (
+                                <SwiperSlide key={scheme}>
+                                    <div
+                                    className={`card h-100 ${selectedColorScheme === scheme ? 'border-primary border-3' : ''}`}
+                                    onClick={() => handleColorSchemeChange(scheme)}
+                                    style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                                    onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.03)')}
+                                    onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                                    >
+                                    <div className="position-relative" style={{ height: '220px' }}>
+                                        <Image
+                                        src={colorSchemes[scheme].image}
+                                        alt={colorSchemes[scheme].name}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className="card-img-top"
+                                        />
+                                        {selectedColorScheme === scheme && (
+                                        <div className="position-absolute top-0 end-0 p-2">
+                                            <span className="badge bg-primary">Selected</span>
+                                        </div>
+                                        )}
                                     </div>
-                                    
-                                    {/* Original grid view (can be kept as an alternative or removed) */}
-                                    <div className="row justify-content-center d-none">
-                                        {Object.keys(colorSchemes).map((scheme) => (
-                                            <div className="col-md-5 col-lg-3 mb-4" key={scheme}>
-                                                <div 
-                                                    className={`card h-100 ${selectedColorScheme === scheme ? 'border-primary border-3' : ''}`}
-                                                    onClick={() => handleColorSchemeChange(scheme)}
-                                                    style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                                                    onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
-                                                    onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                                                >
-                                                    <div className="position-relative" style={{ height: '180px' }}>
-                                                        <Image
-                                                            src={colorSchemes[scheme].image}
-                                                            alt={colorSchemes[scheme].name}
-                                                            layout="fill"
-                                                            objectFit="cover"
-                                                            className="card-img-top"
-                                                        />
-                                                        {selectedColorScheme === scheme && (
-                                                            <div className="position-absolute top-0 end-0 p-2">
-                                                                <span className="badge bg-primary">Selected</span>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <div className="card-body">
-                                                        <h5 className="card-title">{colorSchemes[scheme].name}</h5>
-                                                        <p className="card-text">{colorSchemes[scheme].description}</p>
-                                                        <div className="d-flex justify-content-between mt-3">
-                                                            {colorSchemes[scheme].colors.map((color, index) => (
-                                                                <div 
-                                                                    key={index} 
-                                                                    style={{
-                                                                        backgroundColor: color,
-                                                                        width: '25px',
-                                                                        height: '25px',
-                                                                        borderRadius: '50%',
-                                                                        border: '1px solid #ddd'
-                                                                    }}
-                                                                ></div>
-                                                            ))}
-                                                        </div>
-                                                        <div className="mt-3">
-                                                            <span className={`badge ${scheme === 'driftwood' ? 'bg-success' : 'bg-secondary'} p-2`}>
-                                                                {scheme === 'driftwood' ? 'Included in Base Price' : `+$${formatPrice(colorSchemes[scheme].priceAdjustment)}`}
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{colorSchemes[scheme].name}</h5>
+                                        <p className="card-text">{colorSchemes[scheme].description}</p>
+                                        <div className="d-flex justify-content-between mt-3">
+                                        {colorSchemes[scheme].colors.map((color, index) => (
+                                            <div
+                                            key={index}
+                                            style={{
+                                                backgroundColor: color,
+                                                width: '25px',
+                                                height: '25px',
+                                                borderRadius: '50%',
+                                                border: '1px solid #ddd',
+                                            }}
+                                            ></div>
                                         ))}
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="row mt-4">
-                                <div className="col-12">
-                                    <div className="alert alert-info">
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h5 className="mb-1">Selected: {colorSchemes[selectedColorScheme].name}</h5>
-                                                <p className="mb-0">
-                                                    {selectedColorScheme === 'driftwood' 
-                                                        ? 'Included in base price' 
-                                                        : `Additional cost: +$${formatPrice(colorSchemes[selectedColorScheme].priceAdjustment)}`
-                                                    }
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <h5 className="mb-0">New Total: ${formatPrice(adjustedPrice)}</h5>
-                                            </div>
+                                        </div>
+                                        <div className="mt-3">
+                                        <span
+                                            className={`badge ${scheme === 'driftwood' ? 'bg-success' : 'bg-secondary'} p-2`}
+                                        >
+                                            {scheme === 'driftwood'
+                                            ? 'Included in Base Price'
+                                            : `+$${formatPrice(colorSchemes[scheme].priceAdjustment)}`}
+                                        </span>
                                         </div>
                                     </div>
+                                    </div>
+                                </SwiperSlide>
+                                ))}
+                            </Swiper>
+                            </div>
+                        </div>
+
+                            {/* Right: Selected Summary Alert */}
+                            <div className="col-md-4 d-flex align-items-start mt-8 mt-md-0">
+                                <div className="col-12 mt-8">
+                                    <div className="alert alert-info w-100 mt-8 p-4 rounded shadow-sm">
+                                    <table className="table mb-0 align-middle">
+                                        <thead>
+                                        <tr>
+                                            <th className="">Selected</th>
+                                            <th className="text-muted">{colorSchemes[selectedColorScheme].name}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td colSpan="2" className="py-3">
+                                            <p className="mb-0 small text-secondary">
+                                                {selectedColorScheme === 'driftwood'
+                                                ? 'Included in base price'
+                                                : `Additional cost: +$${formatPrice(colorSchemes[selectedColorScheme].priceAdjustment)}`}
+                                            </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td className="fw-bold">New Total</td>
+                                            <td className="fw-bold">${formatPrice(adjustedPrice)}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                            
+                            
                         </div>
                         
                         <div className="card-footer">
@@ -534,8 +507,9 @@ const QuoteSummary = () => {
                 <Navbar hclass={'wpo-header-style-3'} />
                 <PageTitle pageTitle={'Select Interior Design'} pagesub={'Customization'} />
                 
+                {/* =*=*==*=*==*=*==*=*==*=*==*=*==*=*==*=*==*=*==*=*= */}
                 {/* Progress Indicator */}
-                <div className="container mt-4 mb-5">
+                <div className="" style={{ position: 'relative', marginTop: '3%' , marginBottom: '3%' }}>
                     <div className="row">
                         <div className="col-12">
                             <div className="d-flex justify-content-between align-items-center flex-wrap">
@@ -580,7 +554,7 @@ const QuoteSummary = () => {
                     </div>
                 </div>
                 
-                <div className="container my-5">
+                <div className="my-1 mt-4" style={{ position: 'relative', margin: '0 5%' }}>
                     <div className="card shadow-sm">
                         <div className="card-header bg-primary text-white">
                             <div className="d-flex justify-content-between align-items-center">
@@ -605,99 +579,120 @@ const QuoteSummary = () => {
                             </div>
                             
                             <hr />
-                            
-                            <div className="row">
-                                <div className="col-12">
-                                    <h5 className="text-center mb-4">Choose Your Interior Design Style</h5>
-                                    <p className="text-center text-muted mb-4">Select an interior design style that matches your lifestyle and preferences. This will influence the fixtures, finishes, and overall feel of your new home.</p>
-                                    
-                                    {/* Interior Design Slider */}
-                                    <div className="interior-design-slider mb-5">
-                                        <Swiper
-                                            modules={[Navigation, Pagination]}
-                                            spaceBetween={30}
-                                            slidesPerView={1}
-                                            navigation
-                                            pagination={{ clickable: true }}
-                                            breakpoints={{
-                                                640: {
-                                                    slidesPerView: 1,
-                                                },
-                                                768: {
-                                                    slidesPerView: 2,
-                                                },
-                                                1024: {
-                                                    slidesPerView: 3,
-                                                },
-                                            }}
-                                            onSlideChange={(swiper) => {
-                                                const designKeys = Object.keys(interiorDesigns);
-                                                if (designKeys[swiper.activeIndex]) {
-                                                    handleInteriorDesignChange(designKeys[swiper.activeIndex]);
-                                                }
-                                            }}
-                                            className="mySwiper"
-                                        >
-                                            {Object.keys(interiorDesigns).map((design) => (
-                                                <SwiperSlide key={design}>
-                                                    <div 
-                                                        className={`card h-100 ${selectedInteriorDesign === design ? 'border-primary border-3' : ''}`}
-                                                        onClick={() => handleInteriorDesignChange(design)}
-                                                        style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
-                                                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
-                                                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                                                    >
-                                                        <div className="position-relative" style={{ height: '220px' }}>
-                                                            <Image
-                                                                src={interiorDesigns[design].image}
-                                                                alt={interiorDesigns[design].name}
-                                                                layout="fill"
-                                                                objectFit="cover"
-                                                                className="card-img-top"
-                                                            />
-                                                            {selectedInteriorDesign === design && (
-                                                                <div className="position-absolute top-0 end-0 p-2">
-                                                                    <span className="badge bg-primary">Selected</span>
+                            <div>
+                                <h5 className="text-center mb-4">Choose Your Interior Design Style</h5>
+                                <p className="text-center text-muted mb-4">Select an interior design style that matches your lifestyle and preferences. This will influence the fixtures, finishes, and overall feel of your new home.</p>
+                            </div>
+
+                            <div className="d-flex flex-column">
+                                <div className="row" style={{ display: 'flex' }}>
+                                    <div className="col-8 clz-1" >
+                                        {/* Interior Design Slider */}
+                                        <div className="interior-design-slider mb-5">
+                                            <Swiper
+                                                modules={[Navigation, Pagination]}
+                                                spaceBetween={30}
+                                                slidesPerView={1}
+                                                navigation
+                                                pagination={{ clickable: true }}
+                                                breakpoints={{
+                                                    640: {
+                                                        slidesPerView: 1,
+                                                    },
+                                                    768: {
+                                                        slidesPerView: 2,
+                                                    },
+                                                    1024: {
+                                                        slidesPerView: 3,
+                                                    },
+                                                }}
+                                                onSlideChange={(swiper) => {
+                                                    const designKeys = Object.keys(interiorDesigns);
+                                                    if (designKeys[swiper.activeIndex]) {
+                                                        handleInteriorDesignChange(designKeys[swiper.activeIndex]);
+                                                    }
+                                                }}
+                                                className="mySwiper"
+                                            >
+                                                {Object.keys(interiorDesigns).map((design) => (
+                                                    <SwiperSlide key={design}>
+                                                        <div 
+                                                            className={`card h-100 ${selectedInteriorDesign === design ? 'border-primary border-3' : ''}`}
+                                                            onClick={() => handleInteriorDesignChange(design)}
+                                                            style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                                                            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+                                                            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                                        >
+                                                            <div className="position-relative" style={{ height: '220px' }}>
+                                                                <Image
+                                                                    src={interiorDesigns[design].image}
+                                                                    alt={interiorDesigns[design].name}
+                                                                    layout="fill"
+                                                                    objectFit="cover"
+                                                                    className="card-img-top"
+                                                                />
+                                                                {selectedInteriorDesign === design && (
+                                                                    <div className="position-absolute top-0 end-0 p-2">
+                                                                        <span className="badge bg-primary">Selected</span>
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                            <div className="card-body">
+                                                                <h5 className="card-title">{interiorDesigns[design].name}</h5>
+                                                                <p className="card-text">{interiorDesigns[design].description}</p>
+                                                                <div className="mt-3">
+                                                                    <span className={`badge ${design === 'classic' ? 'bg-success' : 'bg-secondary'} p-2`}>
+                                                                        {design === 'classic' ? 'Included in Base Price' : `+$${formatPrice(interiorDesigns[design].priceAdjustment)}`}
+                                                                    </span>
                                                                 </div>
-                                                            )}
-                                                        </div>
-                                                        <div className="card-body">
-                                                            <h5 className="card-title">{interiorDesigns[design].name}</h5>
-                                                            <p className="card-text">{interiorDesigns[design].description}</p>
-                                                            <div className="mt-3">
-                                                                <span className={`badge ${design === 'classic' ? 'bg-success' : 'bg-secondary'} p-2`}>
-                                                                    {design === 'classic' ? 'Included in Base Price' : `+$${formatPrice(interiorDesigns[design].priceAdjustment)}`}
-                                                                </span>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </SwiperSlide>
-                                            ))}
-                                        </Swiper>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="row mt-4">
-                                <div className="col-12">
-                                    <div className="alert alert-info">
-                                        <div className="d-flex justify-content-between align-items-center">
-                                            <div>
-                                                <h5 className="mb-1">Selected: {interiorDesigns[selectedInteriorDesign].name}</h5>
-                                                <p className="mb-0">
-                                                    {selectedInteriorDesign === 'classic' 
-                                                        ? 'Included in base price' 
-                                                        : `Additional cost: +$${formatPrice(interiorDesigns[selectedInteriorDesign].priceAdjustment)}`
-                                                    }
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <h5 className="mb-0">New Total: ${formatPrice(adjustedPrice)}</h5>
-                                            </div>
+                                                    </SwiperSlide>
+                                                ))}
+                                            </Swiper>
                                         </div>
                                     </div>
+
+                                    <div className="col-4 clz-2">
+                                        <div className="alert alert-info">
+                                            <table className="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th colSpan="2" className="text-center">Selected Interior Design</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><strong>Name:</strong></td>
+                                                        <td>{interiorDesigns[selectedInteriorDesign].name}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Description:</strong></td>
+                                                        <td>{interiorDesigns[selectedInteriorDesign].description}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>Price Adjustment:</strong></td>
+                                                        <td>
+                                                            {selectedInteriorDesign === 'classic' 
+                                                                ? 'Included in base price' 
+                                                                : `+$${formatPrice(interiorDesigns[selectedInteriorDesign].priceAdjustment)}`
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><strong>New Total:</strong></td>
+                                                        <td>${formatPrice(adjustedPrice)}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
+
+
                         </div>
                         
                         <div className="card-footer">
