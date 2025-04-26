@@ -8,6 +8,14 @@ import img1 from '../public/images/color/1.jpg';
 import img2 from '../public/images/color/2.png';
 import img3 from '../public/images/color/3.png';
 import img4 from '../public/images/color/4.png';
+// Add imports for interior design images
+
+import imgInt1 from '../public/images/interior/Kitchen-Birch.jpg';
+import imgInt2 from '../public/images/interior/Kitchen-Palm.jpg';
+import imgInt3 from '../public/images/interior/Kitchen-Dove.jpg';
+import imgInt4 from '../public/images/interior/Kitchen-Ebony.jpg';
+import imgInt5 from '../public/images/interior/Kitchen-Maple.jpg';
+import imgInt6 from '../public/images/interior/Kitchen-Raven.jpg';
 // Import Swiper components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Fix the import path for modules
@@ -24,6 +32,9 @@ const QuoteSummary = () => {
     const [adjustedPrice, setAdjustedPrice] = useState(0);
     const [colorSelectionComplete, setColorSelectionComplete] = useState(false);
     const [activeSlide, setActiveSlide] = useState(0);
+    // Add new states for interior design selection
+    const [showInteriorDesign, setShowInteriorDesign] = useState(false);
+    const [selectedInteriorDesign, setSelectedInteriorDesign] = useState('birch');
 
     // Updated color scheme options with the requested themes and price adjustments
     const colorSchemes = {
@@ -54,6 +65,46 @@ const QuoteSummary = () => {
             image: img4,
             colors: ['#FFB74D', '#FFA726', '#FF9800', '#FB8C00', '#F57C00'],
             priceAdjustment: 4200 // Higher-end option
+        }
+    };
+
+    // Add interior design options
+    const interiorDesigns = {
+        birch: {
+            name: 'Birch',
+            description: 'Light, airy kitchen design with warm birch wood cabinetry and clean lines',
+            image: imgInt1,
+            priceAdjustment: 0 // Included in base price
+        },
+        palm: {
+            name: 'Palm',
+            description: 'Tropical-inspired kitchen with rich wood tones and natural elements',
+            image: imgInt2,
+            priceAdjustment: 3500
+        },
+        dove: {
+            name: 'Dove',
+            description: 'Soft, neutral kitchen design with elegant dove gray cabinetry and subtle details',
+            image: imgInt3,
+            priceAdjustment: 4200
+        },
+        ebony: {
+            name: 'Ebony',
+            description: 'Bold, sophisticated kitchen featuring dark ebony finishes and dramatic contrasts',
+            image: imgInt4,
+            priceAdjustment: 5000
+        },
+        maple: {
+            name: 'Maple',
+            description: 'Warm, inviting kitchen with honey maple cabinetry and traditional elements',
+            image: imgInt5,
+            priceAdjustment: 3800
+        },
+        raven: {
+            name: 'Raven',
+            description: 'Modern, sleek kitchen with deep raven black accents and contemporary styling',
+            image: imgInt6,
+            priceAdjustment: 4500
         }
     };
 
@@ -98,10 +149,11 @@ const QuoteSummary = () => {
     useEffect(() => {
         if (quoteData.totalPrice) {
             const basePrice = parseInt(quoteData.totalPrice.replace(/,/g, ''), 10) || 0;
-            const adjustment = colorSchemes[selectedColorScheme]?.priceAdjustment || 0;
-            setAdjustedPrice(basePrice + adjustment);
+            const colorAdjustment = colorSchemes[selectedColorScheme]?.priceAdjustment || 0;
+            const interiorAdjustment = interiorDesigns[selectedInteriorDesign]?.priceAdjustment || 0;
+            setAdjustedPrice(basePrice + colorAdjustment + interiorAdjustment);
         }
-    }, [quoteData.totalPrice, selectedColorScheme]);
+    }, [quoteData.totalPrice, selectedColorScheme, selectedInteriorDesign]);
 
     // Format price with commas
     const formatPrice = (price) => {
@@ -128,8 +180,18 @@ const QuoteSummary = () => {
         setColorSelectionComplete(true);
     };
 
-    // Handle contact sales team button click
+    // Handle interior design selection
+    const handleInteriorDesignChange = (design) => {
+        setSelectedInteriorDesign(design);
+    };
+
+    // Handle contact sales team button click - modified to show interior design selection
     const handleContactSalesTeam = () => {
+        setShowInteriorDesign(true);
+    };
+
+    // Handle final submission after interior design selection
+    const handleFinalSubmission = () => {
         // Create an object with all the quote data and selected options
         const contactData = {
             // House details
@@ -148,6 +210,8 @@ const QuoteSummary = () => {
             basePrice: quoteData.totalPrice,
             selectedColorScheme: colorSchemes[selectedColorScheme].name,
             colorSchemePrice: colorSchemes[selectedColorScheme].priceAdjustment,
+            selectedInteriorDesign: interiorDesigns[selectedInteriorDesign].name,
+            interiorDesignPrice: interiorDesigns[selectedInteriorDesign].priceAdjustment,
             totalPrice: adjustedPrice,
             
             // Quote reference
@@ -457,6 +521,223 @@ const QuoteSummary = () => {
         );
     }
 
+    // Interior design selection screen
+    if (showInteriorDesign) {
+        return (
+            <>
+                <Navbar hclass={'wpo-header-style-3'} />
+                <PageTitle pageTitle={'Select Interior Design'} pagesub={'Customization'} />
+                
+                {/* Progress Indicator */}
+                <div className="container mt-4 mb-5">
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="d-flex justify-content-between align-items-center flex-wrap">
+                                <div className="progress-step completed">
+                                    <div className="step-circle">
+                                        <span className="checkmark">✓</span>
+                                    </div>
+                                    <div className="step-label">BUILD YOUR QUOTE</div>
+                                </div>
+                                <div className="progress-step completed">
+                                    <div className="step-circle">
+                                        <span className="checkmark">✓</span>
+                                    </div>
+                                    <div className="step-label">FLOORPLAN</div>
+                                </div>
+                                <div className="progress-step completed">
+                                    <div className="step-circle">
+                                        <span className="checkmark">✓</span>
+                                    </div>
+                                    <div className="step-label">FACADE</div>
+                                </div>
+                                <div className="progress-step completed">
+                                    <div className="step-circle">
+                                        <span className="checkmark">✓</span>
+                                    </div>
+                                    <div className="step-label">COLOURS</div>
+                                </div>
+                                <div className="progress-step active">
+                                    <div className="step-circle">
+                                        <span>5</span>
+                                    </div>
+                                    <div className="step-label">INTERIOR</div>
+                                </div>
+                                <div className="progress-step">
+                                    <div className="step-circle">
+                                        <span>6</span>
+                                    </div>
+                                    <div className="step-label">CONTACT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="container my-5">
+                    <div className="card shadow-sm">
+                        <div className="card-header bg-primary text-white">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <h3 className="mb-0">Select Interior Design Style</h3>
+                                <div className="text-end">
+                                    <div>Quote #: {quoteRef}</div>
+                                    <div>Date: {currentDate}</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="card-body">
+                            <div className="row mb-4">
+                                <div className="col-md-6">
+                                    <h4>{quoteData.title}</h4>
+                                    <p className="text-muted mb-0">Region: {quoteData.selectedRegion}</p>
+                                </div>
+                                <div className="col-md-6 text-md-end">
+                                    <h2 className="text-primary mb-0">${formatPrice(adjustedPrice)}</h2>
+                                    <p className="text-muted">Current Price (with {colorSchemes[selectedColorScheme].name} color scheme)</p>
+                                </div>
+                            </div>
+                            
+                            <hr />
+                            
+                            <div className="row">
+                                <div className="col-12">
+                                    <h5 className="text-center mb-4">Choose Your Interior Design Style</h5>
+                                    <p className="text-center text-muted mb-4">Select an interior design style that matches your lifestyle and preferences. This will influence the fixtures, finishes, and overall feel of your new home.</p>
+                                    
+                                    {/* Interior Design Slider */}
+                                    <div className="interior-design-slider mb-5">
+                                        <Swiper
+                                            modules={[Navigation, Pagination]}
+                                            spaceBetween={30}
+                                            slidesPerView={1}
+                                            navigation
+                                            pagination={{ clickable: true }}
+                                            breakpoints={{
+                                                640: {
+                                                    slidesPerView: 1,
+                                                },
+                                                768: {
+                                                    slidesPerView: 2,
+                                                },
+                                                1024: {
+                                                    slidesPerView: 3,
+                                                },
+                                            }}
+                                            onSlideChange={(swiper) => {
+                                                const designKeys = Object.keys(interiorDesigns);
+                                                if (designKeys[swiper.activeIndex]) {
+                                                    handleInteriorDesignChange(designKeys[swiper.activeIndex]);
+                                                }
+                                            }}
+                                            className="mySwiper"
+                                        >
+                                            {Object.keys(interiorDesigns).map((design) => (
+                                                <SwiperSlide key={design}>
+                                                    <div 
+                                                        className={`card h-100 ${selectedInteriorDesign === design ? 'border-primary border-3' : ''}`}
+                                                        onClick={() => handleInteriorDesignChange(design)}
+                                                        style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+                                                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'}
+                                                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                                    >
+                                                        <div className="position-relative" style={{ height: '220px' }}>
+                                                            <Image
+                                                                src={interiorDesigns[design].image}
+                                                                alt={interiorDesigns[design].name}
+                                                                layout="fill"
+                                                                objectFit="cover"
+                                                                className="card-img-top"
+                                                            />
+                                                            {selectedInteriorDesign === design && (
+                                                                <div className="position-absolute top-0 end-0 p-2">
+                                                                    <span className="badge bg-primary">Selected</span>
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <h5 className="card-title">{interiorDesigns[design].name}</h5>
+                                                            <p className="card-text">{interiorDesigns[design].description}</p>
+                                                            <div className="mt-3">
+                                                                <span className={`badge ${design === 'classic' ? 'bg-success' : 'bg-secondary'} p-2`}>
+                                                                    {design === 'classic' ? 'Included in Base Price' : `+$${formatPrice(interiorDesigns[design].priceAdjustment)}`}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </SwiperSlide>
+                                            ))}
+                                        </Swiper>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="row mt-4">
+                                <div className="col-12">
+                                    <div className="alert alert-info">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h5 className="mb-1">Selected: {interiorDesigns[selectedInteriorDesign].name}</h5>
+                                                <p className="mb-0">
+                                                    {selectedInteriorDesign === 'classic' 
+                                                        ? 'Included in base price' 
+                                                        : `Additional cost: +$${formatPrice(interiorDesigns[selectedInteriorDesign].priceAdjustment)}`
+                                                    }
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h5 className="mb-0">New Total: ${formatPrice(adjustedPrice)}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="card-footer">
+                            <div className="d-flex justify-content-between">
+                                <button 
+                                    className="btn btn-outline-secondary"
+                                    onClick={() => setShowInteriorDesign(false)}
+                                >
+                                    Back to Summary
+                                </button>
+                                <button 
+                                    className="btn btn-primary"
+                                    onClick={handleFinalSubmission}
+                                >
+                                    Continue to Contact Form
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {/* Add custom styles for the slider */}
+                <style jsx global>{`
+                    .swiper {
+                        width: 100%;
+                        padding-bottom: 50px;
+                    }
+                    
+                    .swiper-slide {
+                        height: auto;
+                        padding: 10px;
+                    }
+                    
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        color: #0d6efd;
+                    }
+                    
+                    .swiper-pagination-bullet-active {
+                        background: #0d6efd;
+                    }
+                `}</style>
+            </>
+        );
+    }
+
     // Main quote summary screen (shown after color selection)
     return (
         <>
@@ -676,7 +957,7 @@ const QuoteSummary = () => {
                                     Print Quote
                                 </button>
                                 <button className="btn btn-success" onClick={handleContactSalesTeam}>
-                                    Contact Sales Team
+                                    Next Step
                                 </button>
                             </div>
                         </div>
