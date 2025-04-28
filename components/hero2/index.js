@@ -18,7 +18,7 @@ const Hero2 = (props) => {
         {
             bgImage: "/images/slider/home1.jpg",
             heading: "WE CRAFT FUTURE\nDREAM HOME",
-            cta: { text: "Request A Visit", link: "/contact" },
+            cta: { text: "Browse Properties", link: "/properties" },
             description: "Realtor Vacation stands for exceptional luxury properties and single properties in the most sought-after districts of the city. Turning houses become dreams as your go-to real estate agent. You can rely on us to help you safely home."
         },
         {
@@ -30,7 +30,7 @@ const Hero2 = (props) => {
         {
             bgImage: "/images/slider/home4.jpg",
             heading: "LUXURY LIVING\nREDEFINED",
-            cta: { text: "Explore Luxury", link: "/luxury" },
+            cta: { text: "Browse Properties", link: "/properties" },
             description: "Explore our exclusive premium properties, where luxury meets impeccable design, extraordinary amenities, and prime locations."
         }
     ];
@@ -66,7 +66,7 @@ const Hero2 = (props) => {
                         <div className="slide" key={index}>
                             <div 
                                 className="slide-inner" 
-                                style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${slide.bgImage})` }}
+                                style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(${slide.bgImage})` }}
                             >
                                 <div className="container">
                                     <div className="row">
@@ -303,7 +303,7 @@ const Hero2 = (props) => {
                     opacity: 0.7;
                     transition: all 0.3s ease;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    background: rgba(207, 207, 207, 0.9);
+                    background: rgb(199, 196, 196);
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -369,18 +369,18 @@ const Hero2 = (props) => {
                     cursor: pointer;
                     opacity: 0.7;
                     transition: all 0.3s ease;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    background: rgba(104, 104, 104, 0.8);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                    background: rgba(170, 167, 167, 0.94);
                     margin: 0 0 0 30rem;
                     padding: 2% 15% 2% 15%;
                     text-align: justify;
                     right: 0;
                     font-size: 1rem;
-                    color: rgba(255, 255, 255, 0.9) !important;
+                    color: rgb(255, 255, 255) !important;
                 }
 
                 .slide-discription p {
-                    color: rgba(255, 255, 255, 0.9) !important;
+                    color: rgba(255, 255, 255) !important;
                 }
 
 

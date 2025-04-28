@@ -10,7 +10,7 @@ const HeaderTopbar = () => {
                         <div className="contact-intro">
                             <ul>
                                 <li><i className="fi ti-location-pin"></i>9 brighton rise maddingley vic 3340</li>
-                                <li><i className="fi flaticon-email"></i> Admins@intensehomes.com.au</li>
+                                <li><i className="fi flaticon-email"></i> admins@intensehomes.com.au</li>
                             </ul>
                         </div>
                     </div>

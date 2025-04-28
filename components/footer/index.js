@@ -100,7 +100,9 @@ const Footer = (props) => {
                                             <input type="email" className="form-control" placeholder="Email Address *" required="" />
                                         </div>
                                         <div className="submit clearfix">
-                                            <button type="submit">subscribe<i className="ti-angle-right"></i></button>
+                                            <button type="submit" style={{ }} >subscribe
+                                                <i className="ti-angle-right" style={{ color: '#ffffff', backgroundColor: '#ff6f30' }} ></i>
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

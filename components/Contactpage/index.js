@@ -15,7 +15,7 @@ const Contactpage = () => {
                                         <i className="fi flaticon-internet"></i>
                                     </div>
                                     <div className="info-text">
-                                        <span>Hotel Address</span>
+                                        <span>Address</span>
                                     </div>
                                 </div>
                                 <p>9 brighton rise maddingley vic 3340
