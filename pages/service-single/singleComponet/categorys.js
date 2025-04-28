@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 import classnames from 'classnames';
-import cimg1 from '/public/images/service-single/img-2.jpg'
-import cimg2 from '/public/images/service-single/img-3.jpg'
+import cimg1 from '/public/images/featured/gourmet-kitchen2.jpg'
+import cimg2 from '/public/images/featured/gourmet-kitchen3.jpg'
 import cimg3 from '/public/images/service-single/img-4.jpg'
 import cimg4 from '/public/images/service-single/img-5.jpg'
 import cimg5 from '/public/images/service-single/img-6.jpg'
 import cimg6 from '/public/images/service-single/img-7.jpg'
-import cimg7 from '/public/images/service-single/img-9.jpg'
-import cimg8 from '/public/images/service-single/img-8.jpg'
+import cimg7 from '/public/images/featured/bath1.jpg'
+import cimg8 from '/public/images/featured/bath2.jpg'
 import Image from 'next/image';
 
 
