@@ -1,0 +1,132 @@
+.mapPopupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.mapPopupContent {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: center;
+}
+
+/* Map container with background map */
+.mapContainer {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 0 auto 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Background map styles */
+.backgroundMap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* SVG overlay on top of the map */
+.melbourneMap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.regionPath {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    fill-opacity: 0.6;
+    stroke-width: 2;
+}
+
+.regionPath:hover {
+    transform: scale(1.02);
+    fill-opacity: 0.8;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 10;
+}
+
+.welcomeText {
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.regionText {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.regionsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.regionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.regionButton:hover, .regionButtonActive {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.regionIcon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+/* Region label styles */
+.regionLabel {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px white, -1px -1px 3px white, 1px -1px 3px white, -1px 1px 3px white;
+    pointer-events: none;
+}
