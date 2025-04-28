@@ -74,7 +74,7 @@ const BuildQuote = () => {
         }
 
         // Base price per square meter
-        const basePricePerSqm = 1500;
+        const basePricePerSqm = 15053.49;
         
         // Get region multiplier or use default
         const regionMultiplier = regionMultipliers[selectedRegion] || regionMultipliers.default;
