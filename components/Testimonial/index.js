@@ -99,13 +99,13 @@ const Testimonial = () => {
                                                 <li><i className="fi flaticon-star"></i></li>
                                             </ul>
                                         </div>
-                                        <div className="quote">
+                                        {/* <div className="quote">
                                             <p>{tesmnl.Des}</p>
-                                        </div>
+                                        </div> */}
                                         <div className="client-info">
-                                            <div className="client-img">
+                                            {/* <div className="client-img">
                                                 <Image src={tesmnl.tsImg} alt="" />
-                                            </div>
+                                            </div> */}
                                             <div className="client-text">
                                                 <h5>{tesmnl.Title}</h5>
                                                 <p>{tesmnl.Sub}</p>
