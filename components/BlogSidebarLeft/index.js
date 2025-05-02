@@ -11,7 +11,7 @@ import inst4 from '../../images/instragram/4.jpg'
 import inst5 from '../../images/instragram/5.jpg'
 import inst6 from '../../images/instragram/6.jpg'
 
-import about from '../../images/blog/profile.png'
+import about from '../../images/favicon.jpg'
 import bicon from '../../images/blog/icon.png'
 
 
@@ -32,7 +32,7 @@ const BlogSidebarLeft = (props) => {
                 <div className="widget profile-widget">
                     <div className="profile-img">
                         <img src={about} alt="" />
-                        <h2>Noumi Bartler</h2>
+                        <h2>Intense Homes</h2>
                         <p>Hi! here is our blog. Read our post - and be with us</p>
                     </div>
                     <div className="pro-social">

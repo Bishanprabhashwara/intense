@@ -94,7 +94,7 @@ const Hero2 = (props) => {
                                     </div>
                                 </div>
 
-                                <div style={{ marginTop: '2.5rem' }}>
+                                <div style={{ marginTop: '3rem' }}>
                                     {/* image cards */}
                                     <div className="property-carousel">
 
@@ -105,7 +105,7 @@ const Hero2 = (props) => {
                                                     className={`property-item ${idx === activeProperty ? 'active' : ''}`}
                                                     onClick={() => setActiveProperty(idx)}
                                                 >
-                                                    <div className="property-label">{property.name}</div>
+                                                    {/*<div className="property-label">{property.name}</div>*/}
                                                     <div className="property-thumb" style={{ backgroundImage: `url(${property.image})` }}></div>
                                                 </div>
                                             ))}
@@ -162,6 +162,7 @@ const Hero2 = (props) => {
                     font-weight: 700;
                     letter-spacing: 1px;
                     margin-bottom: 2rem;
+                    margin-top: -2rem;
                     // top: 0;
                     line-height: 1.2;
                     text-transform: uppercase;
@@ -319,14 +320,14 @@ const Hero2 = (props) => {
 
                 .property-thumb {
                     width: 100%;
-                    height: 80%;
+                    height: 100%;
                     background-size: cover;
                     background-position: center;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     border-radius: 10px;
-                    margin: 10px 0 0 0;
+                    margin: 0px 0 0 0;
                 }
 
                 .property-label {
@@ -473,7 +474,7 @@ const Hero2 = (props) => {
                     font-size: 0.5rem;
                     font-weight: 700;
                     line-height: 1.2;
-                    margin-top: 0.2rem;
+                    property-items
                 }
 
                 /* Slider Customization */
@@ -557,6 +558,11 @@ const Hero2 = (props) => {
                         align-items: center; /* vertically centers items */
                         justify-content: center; /* horizontally centers items */
                         left: 0;
+                        margin-top: -1rem;
+                    }
+                    
+                    .slide-heading {
+                        margin-top: -5rem;
                     }
 
                 }
@@ -597,6 +603,15 @@ const Hero2 = (props) => {
                         left: 12rem !important;
                         width: 100% !important;
                         top: 22rem;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .slide-heading {
+                        margin-top: -10rem;
+                    }
+                    .service-badge{
+                        margin-top: -5rem !important;
                     }
                 }
 

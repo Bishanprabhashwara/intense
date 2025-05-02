@@ -25,6 +25,11 @@ const menus = [
         //     },
         // ]
     },
+    {
+        id: 2,
+        title: 'Houses',
+        link: '/properties',
+    },
 
     // {
     //     id: 2,
@@ -62,7 +67,7 @@ const menus = [
     },
     
     {
-        id: 7,
+        id: 4,
         title: 'About',
         link: '/about',
         // submenu: [
@@ -101,7 +106,7 @@ const menus = [
     },
 
     {
-        id: 4,
+        id: 5,
         title: 'Service',
         link: '/service',
         // submenu: [
@@ -117,7 +122,11 @@ const menus = [
         //     }
         // ]
     },
-
+    {
+        id: 6,
+        title: 'Blog',
+        link: '/blog-fullwidth',
+    },
     // {
     //     id: 5,
     //     title: 'Blog',
@@ -156,7 +165,7 @@ const menus = [
     //     ]
     // },
     {
-        id: 88,
+        id: 7,
         title: 'Contact',
         link: '/contact',
     }

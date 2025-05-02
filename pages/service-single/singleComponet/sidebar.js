@@ -12,13 +12,13 @@ const Sidebar = (props) => {
                 <div className="widget service-list-widget">
                     <h3>All Services</h3>
                     <ul>
-                        <li><Link onClick={ClickHandler} href='/service'>All Service</Link></li>
-                        <li className="current"><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Gourmet Kitchen</Link></li>
-                        <li><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Swimming Pool</Link></li>
-                        <li><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Outdoor Living</Link></li>
-                        <li><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Smart Home Technology</Link></li>
-                        <li><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Media Room</Link></li>
-                        <li><Link onClick={ClickHandler} href='/service-single/Delicious-Food'>Luxury Bathrooms</Link></li>
+                        {/* <li ><Link onClick={ClickHandler} href='/service'>All Service</Link></li> */}
+                        <li><Link onClick={ClickHandler} href='/service-single/living_room'>Living Room</Link></li>
+                        <li><Link onClick={ClickHandler} href='/service-single/bed_room'>Bed Room</Link></li>
+                        <li><Link onClick={ClickHandler} href='/service-single/modern_kitchen'>Modern Kitchen</Link></li>
+                        <li><Link onClick={ClickHandler} href='/service-single/luxury_bathrooms'>Luxury Bathrooms</Link></li>
+                        <li><Link onClick={ClickHandler} href='/service-single/swimming_pool'>Swimming Pool</Link></li>
+                        <li><Link onClick={ClickHandler} href='/service-single/outdoor_entertainment_area'>Outdoor Entertainment Area</Link></li>
                     </ul>
                 </div>
                 <div className="widget contact-widget">

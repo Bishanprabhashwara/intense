@@ -1,8 +1,4 @@
-	/*
-  	Flaticon icon font: Flaticon
-  	Creation date: 28/12/2023 04:51
-  	*/
-
+/* Flaticon icon font: Flaticon */
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/flaticon.eot");
@@ -23,7 +19,7 @@
 }
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
   font-family: Flaticon;
   font-size: 50px;
   font-style: normal;
@@ -59,3 +55,8 @@
 .flaticon-internet:before { content: "\f11b"; }
 .flaticon-email:before { content: "\f11c"; }
 .flaticon-null-1:before { content: "\f11d"; }
+
+/* New icons added */
+.flaticon-sofa:before { content: "\f11e"; }
+.flaticon-bed:before { content: "\f11f"; }
+.flaticon-bath:before { content: "\f120"; }
