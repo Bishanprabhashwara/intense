@@ -18,7 +18,7 @@ const Contactpage = () => {
                                         <span>Address</span>
                                     </div>
                                 </div>
-                                <p>9 brighton rise maddingley vic 3340
+                                <p>Brighton rise maddingley vic 3340
                                 </p>
                             </div>
                         </div>

@@ -89,7 +89,20 @@ const SearchSection = (props) => {
                     </div>
                 </div>
             </div>
+
+            {/* Internal Responsive CSS */}
+            <style jsx>{`
+                
+                @media screen and (max-width: 768px) {
+                    .container{
+                        margin-top: 2rem;
+                    }
+                }
+            `}</style>
+
         </div>
+
+        
     )
 }
 
