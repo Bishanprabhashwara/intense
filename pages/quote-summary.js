@@ -854,18 +854,18 @@ const QuoteSummary = () => {
                                 <h5>Price Breakdown</h5>
                                 <table className="table table-bordered">
                                     <tbody>
-                                        <tr>
+                                        {/* <tr>
                                             <th>Base Construction</th>
                                             <td>${formatPrice(Math.round(parseFloat(quoteData.size) * 1500))}</td>
-                                        </tr>
+                                        </tr> */}
                                         <tr>
                                             <th>Region Factor</th>
                                             <td>+${formatPrice(Math.round(parseFloat(quoteData.size) * 1500 * 0.1))}</td>
                                         </tr>
-                                        <tr>
+                                        {/* <tr>
                                             <th>Base House Price</th>
                                             <td>${formatPrice(Math.round(parseFloat(quoteData.size) * 1500))}</td>
-                                        </tr>
+                                        </tr> */}
                                         <tr>
                                             <th>Color Scheme ({colorSchemes[selectedColorScheme].name})</th>
                                             <td>+${formatPrice(colorSchemes[selectedColorScheme].priceAdjustment)}</td>
