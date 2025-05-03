@@ -102,45 +102,46 @@ const Properties = () => {
                     </div>
                     
                     <div className="row mt-5">
-                        {filteredProperties.map(property => (
-                            <div className="col-lg-4 col-md-6 col-12 mb-4" key={property.id}>
-                                <div className="property-card">
-                                    <div className="property-img position-relative">
-                                        {typeof property.image === 'string' ? (
-                                            // For string paths (public folder)
-                                            <img 
-                                                src={property.image} 
-                                                alt={property.title}
-                                                className="img-fluid"
-                                                style={{width: '100%', height: '100%', objectFit: 'cover'}}
-                                            />
-                                        ) : (
-                                            // For imported images
-                                            <Image 
-                                                src={property.image} 
-                                                alt={property.title}
-                                                width={400}
-                                                height={300}
-                                                className="img-fluid"
-                                            />
-                                        )}
-                                        {property.featured && (
-                                            <span className="featured-badge">Featured</span>
-                                        )}
-                                        {/* <div className="property-price">{property.price}</div> */}
-                                    </div>
-                                    <div className="property-info p-4">
-                                        <h3><Link href={`/property-single?id=${property.id}`}>{property.title}</Link></h3>
-                                        <p className="location"><i className="fi flaticon-placeholder"></i> {property.location}</p>
-                                        <div className="property-features d-flex justify-content-between mt-3">
-                                            <span><i className="fi flaticon-bed"></i> {property.bedrooms} Beds</span>
-                                            <span><i className="fi flaticon-bathroom"></i> {property.bathrooms} Baths</span>
-                                            <span><i className="fi flaticon-square"></i> {property.area}</span>
+                    {filteredProperties.map(property => (
+                        <div className="col-lg-4 col-md-6 col-12 mb-4" key={property.id}>
+                            <Link href={`/property/${property.id}`} passHref legacyBehavior>
+                                <a className="property-card-link">
+                                    <div className="property-card">
+                                        <div className="property-img position-relative">
+                                            {typeof property.image === 'string' ? (
+                                                <img 
+                                                    src={property.image} 
+                                                    alt={property.title}
+                                                    className="img-fluid"
+                                                    style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                                                />
+                                            ) : (
+                                                <Image 
+                                                    src={property.image} 
+                                                    alt={property.title}
+                                                    width={400}
+                                                    height={300}
+                                                    className="img-fluid"
+                                                />
+                                            )}
+                                            {property.featured && (
+                                                <span className="featured-badge">Featured</span>
+                                            )}
+                                        </div>
+                                        <div className="property-info p-4">
+                                            <h3>{property.title}</h3>
+                                            <p className="location"><i className="fi flaticon-placeholder"></i> {property.location}</p>
+                                            <div className="property-features d-flex justify-content-between mt-3">
+                                                <span>{property.bedrooms} Beds</span>
+                                                <span>{property.bathrooms} Baths</span>
+                                                <span>{property.area}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        ))}
+                                </a>
+                            </Link>
+                        </div>
+                    ))}
                     </div>
                 </div>
             </section>
