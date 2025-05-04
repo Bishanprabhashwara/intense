@@ -26,20 +26,20 @@ const Header = (props) => {
                         <div className="row align-items-center">
                             <div className="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-4">
                                 <div className="logo">
-                                    <Link onClick={ClickHandler} href="/home" title=""><Image src={Logo} alt="" /></Link>
+                                    <Link onClick={ClickHandler} href="/" title=""><Image src={Logo} alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-xl-6 col-lg-8 d-lg-block d-none">
                                 <nav>
                                     <ul>
-                                        <li><Link onClick={ClickHandler}  href="/home2" title="">Home</Link>
+                                        <li><Link onClick={ClickHandler}  href="/" title="">Home</Link>
                                             {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/home">Home style 1</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home2">Home style 2</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/home3">Home style 3</Link></li>
                                             </ul> */}
                                         </li>
-                                        <li><Link onClick={ClickHandler} href="/room" title="">Houses</Link>
+                                        <li><Link onClick={ClickHandler} href="/properties" title="">Houses</Link>
                                             {/* <ul>
                                                 <li><Link onClick={ClickHandler} href="/room" title="">Room</Link></li>
                                                 <li><Link onClick={ClickHandler} href="/room-single/Apartment" title="">Room Single</Link></li>
@@ -85,6 +85,7 @@ const Header = (props) => {
                                                 </li>
                                             </ul>
                                         </li> */}
+                                        <li><Link onClick={ClickHandler} href="/blog-left-sidebar">Blog</Link></li>
                                         <li><Link onClick={ClickHandler} href="/contact" title="">Contact</Link></li>
                                     </ul>
                                 </nav>
