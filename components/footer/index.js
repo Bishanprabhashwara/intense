@@ -50,7 +50,7 @@ const Footer = (props) => {
                                     {/* <p>online store with lots of cool and exclusive features</p> */}
                                     <div className="contact-ft">
                                         <ul>
-                                            <li><i className="fi ti-location-pin"></i>9 brighton rise maddingley vic 3340</li>
+                                            <li><i className="fi ti-location-pin"></i>brighton rise maddingley vic 3340</li>
                                             <li><i className="fi ti-mobile"></i>+04 333-278-71</li>
                                             <li><i className="fi flaticon-email"></i>Admins@intensehomes.com.au</li>
                                         </ul>
