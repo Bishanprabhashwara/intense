@@ -17,7 +17,7 @@ const AboutPage =() => {
             <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
             <About/>
             {/* <Features/> */}
-            <RoomSection/>
+            {/* <RoomSection/> */}
             {/* <Counter/> */}
             <Testimonial/>
             <Footer/>

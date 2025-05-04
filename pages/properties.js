@@ -40,7 +40,7 @@ const Properties = () => {
         },
         {
             id: 3,
-            title: 'Downtown Office Space',
+            title: 'Sadie Avenue',
             category: 'residential',
             price: '$780,000',
             bedrooms: 4,
@@ -52,7 +52,7 @@ const Properties = () => {
         },
         {
             id: 4,
-            title: 'Beachfront Villa',
+            title: 'Comfort & Convenience',
             category: 'residential',
             price: '$790,000',
             bedrooms: 4,
@@ -128,15 +128,15 @@ const Properties = () => {
                                             {property.featured && (
                                                 <span className="featured-badge">Featured</span>
                                             )}
-                                            <div className="property-price">{property.price}</div>
+                                            {/* <div className="property-price">{property.price}</div> */}
                                         </div>
                                         <div className="property-info p-4">
                                             <h3>{property.title}</h3>
                                             <p className="location"><i className="fi flaticon-placeholder"></i> {property.location}</p>
                                             <div className="property-features d-flex justify-content-between mt-3">
-                                                <span><i className="fi flaticon-bed"></i> {property.bedrooms} Beds</span>
-                                                <span><i className="fi flaticon-bathroom"></i> {property.bathrooms} Baths</span>
-                                                <span><i className="fi flaticon-square"></i> {property.area}</span>
+                                                <span> {property.bedrooms} Beds</span>
+                                                <span>{property.bathrooms} Baths</span>
+                                                <span> {property.area}</span>
                                             </div>
                                         </div>
                                     </div>
